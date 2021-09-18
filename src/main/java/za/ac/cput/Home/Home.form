@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="3"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" attributes="0">
+              <EmptySpace min="51" pref="51" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="ProductDisplay" alignment="0" min="-2" pref="640" max="-2" attributes="0"/>
+                  <Component id="addInventory" min="-2" pref="640" max="-2" attributes="0"/>
+                  <Component id="updateInventory" min="-2" pref="640" max="-2" attributes="0"/>
+                  <Component id="removeInventory" min="-2" pref="640" max="-2" attributes="0"/>
+                  <Component id="systemUsers" min="-2" pref="640" max="-2" attributes="0"/>
+                  <Component id="systemNotification" min="-2" pref="640" max="-2" attributes="0"/>
+                  <Component id="systemAnalytics" min="-2" pref="640" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="69" max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+              <Component id="ProductDisplay" min="-2" pref="52" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="addInventory" min="-2" pref="52" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="updateInventory" min="-2" pref="52" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="removeInventory" min="-2" pref="52" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="systemUsers" min="-2" pref="52" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="systemNotification" min="-2" pref="52" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="systemAnalytics" min="-2" pref="52" max="-2" attributes="0"/>
+              <EmptySpace pref="24" max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JButton" name="ProductDisplay">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Products"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="addInventory">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Add Inventory"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addInventoryActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="updateInventory">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Update Inventory"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="removeInventory">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Remove Inventory"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="removeInventoryActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="systemUsers">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Users"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="systemNotification">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Notifications"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="systemAnalytics">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Analytics"/>
+      </Properties>
+    </Component>
+  </SubComponents>
+</Form>
