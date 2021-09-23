@@ -3,11 +3,20 @@ package za.ac.cput.Login;
 
 import javax.swing.JOptionPane;
 import za.ac.cput.Home.Home;
+import za.ac.cput.Users.UserDBOperations;
+import za.ac.cput.Users.User;
 
 
-
+/**
+ * ADMIN LOGIN DETAILS
+ * 
+ * Email: john.doe@example.com
+ * Password: admin123@example.com
+ */
 public class loginJFrame extends javax.swing.JFrame {
 
+    UserDBOperations dbOperation = new UserDBOperations();
+    
     public loginJFrame() {
         initComponents();
       
@@ -20,7 +29,8 @@ public class loginJFrame extends javax.swing.JFrame {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+    private void initComponents()
+    {
 
         jSlider1 = new javax.swing.JSlider();
         jPasswordField1 = new javax.swing.JPasswordField();
@@ -37,14 +47,16 @@ public class loginJFrame extends javax.swing.JFrame {
         setLocationByPlatform(true);
 
         jLabel1.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
-        jLabel1.setText("Username :");
+        jLabel1.setText("Email       :");
 
         jLabel2.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
         jLabel2.setText("Password :");
 
         jTextField1.setActionCommand("txtUsername");
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        jTextField1.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 jTextField1ActionPerformed(evt);
             }
         });
@@ -52,8 +64,10 @@ public class loginJFrame extends javax.swing.JFrame {
         jButton1.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         jButton1.setText("Login");
         jButton1.setActionCommand("JLogin");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        jButton1.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 jButton1ActionPerformed(evt);
             }
         });
@@ -76,7 +90,7 @@ public class loginJFrame extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(210, 210, 210)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(69, Short.MAX_VALUE))
+                .addContainerGap(73, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -98,22 +112,25 @@ public class loginJFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        String uname = jTextField1.getText();
-        String pword = passwordField.getText();
-        if(uname.equals("admin") && pword.equals("admin")){
-            JOptionPane.showMessageDialog(null, "successfully login");
-            
-            Home homepage = new Home();
-            homepage.setVisible(true);
 
-            
-            
-        } 
+        String userEmail = jTextField1.getText();
+        String userPassword = new String(passwordField.getPassword());
+        
+        if(isUserRegistered(userEmail)){
+            if(isPasswordAMatch(userEmail, userPassword))
+            {
+                JOptionPane.showMessageDialog(null, "successfully login");
+                Home homepage = new Home();
+                homepage.setVisible(true);
+                this.setVisible(false);
+            }else{
+                JOptionPane.showMessageDialog(null, "incorrect password");  
+                passwordField.setText("");
+            }
+        }
         else{
-          JOptionPane.showMessageDialog(null, "incorrect details");  
-          jTextField1.setText(" ");
-          passwordField.setText(" ");
+          JOptionPane.showMessageDialog(null, "incorrect email");  
+          jTextField1.setText("");
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -121,6 +138,8 @@ public class loginJFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
 
+    
+    
     /**
      * @param args the command line arguments
      */
@@ -154,6 +173,19 @@ public class loginJFrame extends javax.swing.JFrame {
                 new loginJFrame().setVisible(true);
             }
         });
+    }
+    
+    private boolean isUserRegistered(String email)
+    {
+        User user = dbOperation.getUser(email);
+        return (user != null);
+    }
+    
+    private boolean isPasswordAMatch(String email, String password)
+    {
+        String userPassword = dbOperation.getUser(email).getPassword();
+        boolean isEqual = userPassword.equals(password);
+        return isEqual;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
