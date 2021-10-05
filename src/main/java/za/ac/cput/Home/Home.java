@@ -6,6 +6,7 @@
 package za.ac.cput.Home;
 
 import za.ac.cput.Products.removeInventory;
+import za.ac.cput.Users.Users;
 
 /**
  *
@@ -27,7 +28,8 @@ public class Home extends javax.swing.JFrame {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+    private void initComponents()
+    {
 
         ProductDisplay = new javax.swing.JButton();
         addInventory = new javax.swing.JButton();
@@ -42,8 +44,10 @@ public class Home extends javax.swing.JFrame {
         ProductDisplay.setText("Products");
 
         addInventory.setText("Add Inventory");
-        addInventory.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        addInventory.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 addInventoryActionPerformed(evt);
             }
         });
@@ -51,13 +55,22 @@ public class Home extends javax.swing.JFrame {
         updateInventory.setText("Update Inventory");
 
         removeInventory.setText("Remove Inventory");
-        removeInventory.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        removeInventory.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 removeInventoryActionPerformed(evt);
             }
         });
 
         systemUsers.setText("Users");
+        systemUsers.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                systemUsersActionPerformed(evt);
+            }
+        });
 
         systemNotification.setText("Notifications");
 
@@ -111,6 +124,13 @@ public class Home extends javax.swing.JFrame {
         removeInventory rid = new removeInventory();
         rid.setVisible(true);
     }//GEN-LAST:event_removeInventoryActionPerformed
+
+    private void systemUsersActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_systemUsersActionPerformed
+    {//GEN-HEADEREND:event_systemUsersActionPerformed
+        // TODO add your handling code here:
+        Users usersView = new Users();
+        usersView.setVisible(true);
+    }//GEN-LAST:event_systemUsersActionPerformed
 
     /**
      * @param args the command line arguments
