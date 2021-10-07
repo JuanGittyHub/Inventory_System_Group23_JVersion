@@ -1,10 +1,13 @@
 za\ac\cput\Products\Products.class
 za\ac\cput\Products\removeInventory.class
 za\ac\cput\Home\Home.class
+<<<<<<< HEAD
 za\ac\cput\Login\loginJFrame$3.class
 za\ac\cput\Login\loginJFrame.class
 za\ac\cput\DBConnection\DBConnection.class
 za\ac\cput\Home\Home$2.class
+=======
+>>>>>>> fc183ec945a3039fa7764197df3504f875228046
 za\ac\cput\Users\RemoveUser$1.class
 za\ac\cput\Users\User.class
 za\ac\cput\Users\Users$2.class
@@ -33,4 +36,7 @@ za\ac\cput\Home\Home$1.class
 za\ac\cput\Login\loginJFrame$2.class
 za\ac\cput\Users\Users$5.class
 za\ac\cput\Products\removeInventory$1.class
+<<<<<<< HEAD
 za\ac\cput\dao\ProductDAO.class
+=======
+>>>>>>> fc183ec945a3039fa7764197df3504f875228046
