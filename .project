@@ -5,6 +5,10 @@
 	<projects>
 	</projects>
 	<buildSpec>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 4597a74aef5aa788aff113f5eb029c2ddd0b1026
 		<buildCommand>
 			<name>org.eclipse.jdt.core.javabuilder</name>
 			<arguments>
@@ -22,7 +26,11 @@
 	</natures>
 	<filteredResources>
 		<filter>
+<<<<<<< HEAD
 			<id>1633619495301</id>
+=======
+			<id>1633461420445</id>
+>>>>>>> 4597a74aef5aa788aff113f5eb029c2ddd0b1026
 			<name></name>
 			<type>30</type>
 			<matcher>
@@ -31,4 +39,12 @@
 			</matcher>
 		</filter>
 	</filteredResources>
+<<<<<<< HEAD
+=======
+=======
+	</buildSpec>
+	<natures>
+	</natures>
+>>>>>>> fc183ec945a3039fa7764197df3504f875228046
+>>>>>>> 4597a74aef5aa788aff113f5eb029c2ddd0b1026
 </projectDescription>
