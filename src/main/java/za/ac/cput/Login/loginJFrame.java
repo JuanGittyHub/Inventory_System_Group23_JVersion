@@ -62,7 +62,6 @@ public class loginJFrame extends javax.swing.JFrame {
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-<<<<<<< HEAD
         setBackground(new java.awt.Color(204, 204, 204));
         setForeground(new java.awt.Color(255, 102, 0));
         setLocation(new java.awt.Point(0, 0));
@@ -70,18 +69,15 @@ public class loginJFrame extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
         jLabel1.setText("Email       :");
-=======
         setBackground(new java.awt.Color(255, 255, 255));
         setLocation(new java.awt.Point(0, 0));
         setLocationByPlatform(true);
 
         jPanel6.setBackground(new java.awt.Color(255, 255, 255));
->>>>>>> cf33804f290d08f4b1542fcec11c67a157ed9925
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel1.setText("USERNAME");
 
-<<<<<<< HEAD
         jTextField1.setBackground(new java.awt.Color(255, 255, 255));
         jTextField1.setForeground(new java.awt.Color(255, 153, 0));
         jTextField1.setActionCommand("txtUsername");
@@ -103,7 +99,6 @@ public class loginJFrame extends javax.swing.JFrame {
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
             {
-=======
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel2.setText("PASSWORD");
 
@@ -112,16 +107,13 @@ public class loginJFrame extends javax.swing.JFrame {
         jButton1.setText("LOGIN");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
->>>>>>> cf33804f290d08f4b1542fcec11c67a157ed9925
                 jButton1ActionPerformed(evt);
             }
         });
 
-<<<<<<< HEAD
         passwordField.setBackground(new java.awt.Color(255, 255, 255));
         passwordField.setForeground(new java.awt.Color(255, 153, 0));
         passwordField.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(255, 153, 0)));
-=======
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
@@ -157,13 +149,11 @@ public class loginJFrame extends javax.swing.JFrame {
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(41, Short.MAX_VALUE))
         );
->>>>>>> cf33804f290d08f4b1542fcec11c67a157ed9925
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-<<<<<<< HEAD
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -179,9 +169,7 @@ public class loginJFrame extends javax.swing.JFrame {
                         .addGap(210, 210, 210)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(73, Short.MAX_VALUE))
-=======
             .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
->>>>>>> cf33804f290d08f4b1542fcec11c67a157ed9925
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -195,7 +183,6 @@ public class loginJFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-<<<<<<< HEAD
 
         String userEmail = jTextField1.getText();
         String userPassword = new String(passwordField.getPassword());
@@ -224,7 +211,6 @@ public class loginJFrame extends javax.swing.JFrame {
 
     
     
-=======
         // TODO add your handling code here:
          String uname = jTextField1.getText();
         String pword = jTextField2.getText();
@@ -246,7 +232,6 @@ public class loginJFrame extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
->>>>>>> cf33804f290d08f4b1542fcec11c67a157ed9925
     /**
      * @param args the command line arguments
      */
