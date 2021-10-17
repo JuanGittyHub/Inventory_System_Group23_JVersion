@@ -43,6 +43,8 @@ public class loginJFrame extends javax.swing.JFrame {
         jPasswordField1.setText("jPasswordField1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(204, 204, 204));
+        setForeground(new java.awt.Color(255, 102, 0));
         setLocation(new java.awt.Point(0, 0));
         setLocationByPlatform(true);
 
@@ -52,7 +54,10 @@ public class loginJFrame extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
         jLabel2.setText("Password :");
 
+        jTextField1.setBackground(new java.awt.Color(255, 255, 255));
+        jTextField1.setForeground(new java.awt.Color(255, 153, 0));
         jTextField1.setActionCommand("txtUsername");
+        jTextField1.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(255, 153, 0)));
         jTextField1.addActionListener(new java.awt.event.ActionListener()
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
@@ -61,7 +66,9 @@ public class loginJFrame extends javax.swing.JFrame {
             }
         });
 
+        jButton1.setBackground(new java.awt.Color(255, 153, 0));
         jButton1.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Login");
         jButton1.setActionCommand("JLogin");
         jButton1.addActionListener(new java.awt.event.ActionListener()
@@ -71,6 +78,10 @@ public class loginJFrame extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
+
+        passwordField.setBackground(new java.awt.Color(255, 255, 255));
+        passwordField.setForeground(new java.awt.Color(255, 153, 0));
+        passwordField.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(255, 153, 0)));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
