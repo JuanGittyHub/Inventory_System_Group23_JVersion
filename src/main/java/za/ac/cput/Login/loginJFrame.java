@@ -7,25 +7,20 @@ import za.ac.cput.Home.Home;
 import za.ac.cput.Users.UserDBOperations;
 import za.ac.cput.Users.User;
 
-
 /**
  * ADMIN LOGIN DETAILS
  * 
- * Email: john.doe@example.com
- * Password: admin123@example.com
+ * Email: john.doe@example.com Password: admin123@example.com
  */
 public class loginJFrame extends javax.swing.JFrame {
 
     UserDBOperations dbOperation = new UserDBOperations();
-    
-    public loginJFrame() {
+
+    public loginJFrame()
+    {
         initComponents();
-        
-       
         Color orangeh = new Color(250,164,96);
         jButton1.setBackground(orangeh);
-        
-      
     }
 
     /**
@@ -99,16 +94,21 @@ public class loginJFrame extends javax.swing.JFrame {
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
             {
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel2.setText("PASSWORD");
+                jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+                jLabel2.setText("PASSWORD");
 
-        jButton1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("LOGIN");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
+                jButton1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+                jButton1.setForeground(new java.awt.Color(255, 255, 255));
+                jButton1.setText("LOGIN");
+
+                jButton1.addActionListener(new java.awt.event.ActionListener() 
+                {
+                    public void actionPerformed(java.awt.event.ActionEvent evt) 
+                    {
+                        jButton1ActionPerformed(evt);
+                    }
+                });
+            } 
         });
 
         passwordField.setBackground(new java.awt.Color(255, 255, 255));
@@ -205,9 +205,10 @@ public class loginJFrame extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) 
+    {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    //GEN-LAST:event_jTextField1ActionPerformed
 
     
     

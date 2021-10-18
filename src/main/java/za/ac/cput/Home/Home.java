@@ -59,7 +59,6 @@ public class Home extends javax.swing.JFrame {
 
         addInventory.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         addInventory.setText("Add Inventory");
-<<<<<<< HEAD
         addInventory.addActionListener(new java.awt.event.ActionListener()
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
@@ -67,8 +66,6 @@ public class Home extends javax.swing.JFrame {
                 addInventoryActionPerformed(evt);
             }
         });
-=======
->>>>>>> cf33804f290d08f4b1542fcec11c67a157ed9925
 
         updateInventory.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         updateInventory.setText("Update Inventory");
