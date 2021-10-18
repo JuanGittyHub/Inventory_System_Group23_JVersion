@@ -216,15 +216,10 @@ public class loginJFrame extends javax.swing.JFrame {
          String uname = jTextField1.getText();
         String pword = jTextField2.getText();
         if(uname.equals("admin") && pword.equals("admin")){
-            JOptionPane.showMessageDialog(null, "successfully login");
-            
+            JOptionPane.showMessageDialog(null, "successfully login");   
             Home homepage = new Home();
-            homepage.setVisible(true);
-            
+            homepage.setVisible(true);       
             this.setVisible(false);
-            
-            
-            
         } 
         else{
           JOptionPane.showMessageDialog(null, "incorrect details");  

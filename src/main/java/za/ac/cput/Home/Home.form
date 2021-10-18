@@ -42,7 +42,6 @@
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
       </Properties>
-<<<<<<< HEAD
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addInventoryActionPerformed"/>
       </Events>
@@ -78,7 +77,6 @@
         <Property name="text" type="java.lang.String" value="Analytics"/>
       </Properties>
     </Component>
-=======
 
       <Layout>
         <DimensionLayout dim="0">
@@ -182,6 +180,5 @@
         </Component>
       </SubComponents>
     </Container>
->>>>>>> cf33804f290d08f4b1542fcec11c67a157ed9925
   </SubComponents>
 </Form>
