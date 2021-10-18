@@ -10,6 +10,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import za.ac.cput.Home.Home;
 
@@ -24,12 +25,45 @@ public class removeInventory extends javax.swing.JFrame {
      */
     public removeInventory() {
         initComponents();
+        
+         ImageIcon icon;
+         icon = new ImageIcon("Logo/logos.jpg");
+         this.setIconImage(icon.getImage());
          Color orangeh = new Color(250,164,96);
            Color purpley = new Color(179,156,190);
          submitButton.setBackground(orangeh);
          jButton1.setBackground(purpley);
          headerPanel.setBackground(purpley);
     }
+    
+    public void RemoveInventory(){
+        if(barCode.getText().isEmpty()){
+            JOptionPane.showMessageDialog(null, "Cannot be empty");
+        }
+        else{
+         try{
+            String bcode = barCode.getText();
+        String url = "jdbc:derby://localhost:1527/Group23";
+        String user = "project";
+        String password = "admin";
+           Connection con = DriverManager.getConnection(url, user, password);
+            String deletion = ("DELETE FROM PRODUCTS WHERE barcode = ?");
+            PreparedStatement ps = con.prepareStatement(deletion);
+            ps.setString(1, bcode);
+            ps.executeUpdate();
+            
+            JOptionPane.showMessageDialog(null, "Product successfully deleted");
+            barCode.setText(" ");
+            con.close();
+        
+      
+        }
+         catch(SQLException ab){
+             ab.getMessage();
+    }
+    }
+        }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -149,28 +183,8 @@ public class removeInventory extends javax.swing.JFrame {
         // TODO add your handling code here:
      
    if (evt.getSource()== submitButton){
-        try{
-            String bcode = barCode.getText();
-        String url = "jdbc:derby://localhost:1527/Group23";
-        String user = "project";
-        String password = "admin";
-           Connection con = DriverManager.getConnection(url, user, password);
-            String deletion = ("DELETE FROM PRODUCTS WHERE barcode = ?");
-            PreparedStatement ps = con.prepareStatement(deletion);
-            ps.setString(1, bcode);
-            ps.executeUpdate();
-            
-            JOptionPane.showMessageDialog(null, "Product successfully deleted");
-            barCode.setText(" ");
-            con.close();
-        
-      
-        }
-       
-           catch(SQLException sq){
-                JOptionPane.showMessageDialog(null, "error");
-                barCode.setText(" ");
-        }
+     
+       RemoveInventory();
        }
          
        

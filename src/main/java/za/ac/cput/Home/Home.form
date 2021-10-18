@@ -42,43 +42,6 @@
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
       </Properties>
-<<<<<<< HEAD
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addInventoryActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JButton" name="updateInventory">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Update Inventory"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JButton" name="removeInventory">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Remove Inventory"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="removeInventoryActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JButton" name="systemUsers">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Users"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="systemUsersActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JButton" name="systemNotification">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Notifications"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JButton" name="systemAnalytics">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Analytics"/>
-      </Properties>
-    </Component>
-=======
 
       <Layout>
         <DimensionLayout dim="0">
@@ -182,6 +145,5 @@
         </Component>
       </SubComponents>
     </Container>
->>>>>>> cf33804f290d08f4b1542fcec11c67a157ed9925
   </SubComponents>
 </Form>
