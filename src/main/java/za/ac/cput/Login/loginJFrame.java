@@ -7,9 +7,15 @@ import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 import za.ac.cput.Home.Home;
+import za.ac.cput.Users.UserDBOperations;
+import za.ac.cput.Users.User;
 
-
-
+/**
+ * ADMIN LOGIN DETAILS
+ * 
+ * Email: john.doe@example.com 
+ * Password: admin123@example.com
+ */
 public class loginJFrame extends javax.swing.JFrame {
 
     public loginJFrame() {
@@ -257,7 +263,7 @@ public class loginJFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel6;
-    private javax.swing.JPasswordField jPasswordField1;
+    private javax.swing.JPasswordField passwordField;
     private javax.swing.JPasswordField jPasswordField2;
     private javax.swing.JSlider jSlider1;
     private javax.swing.JTextField jTextField1;
