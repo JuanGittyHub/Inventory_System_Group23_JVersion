@@ -2,53 +2,12 @@ za\ac\cput\Products\Products.class
 za\ac\cput\Products\removeInventory$3.class
 za\ac\cput\Products\removeInventory.class
 za\ac\cput\Home\Home.class
-<<<<<<< HEAD
-<<<<<<< HEAD
-za\ac\cput\Login\loginJFrame$3.class
-za\ac\cput\Login\loginJFrame.class
-za\ac\cput\DBConnection\DBConnection.class
-za\ac\cput\Home\Home$2.class
-=======
->>>>>>> fc183ec945a3039fa7764197df3504f875228046
-za\ac\cput\Users\RemoveUser$1.class
-za\ac\cput\Users\User.class
-za\ac\cput\Users\Users$2.class
-za\ac\cput\Login\loginJFrame.class
-za\ac\cput\Users\AddUser$2.class
-za\ac\cput\Users\AddUser$7.class
-za\ac\cput\Home\Home$2.class
-za\ac\cput\Users\AddUser$4.class
-za\ac\cput\Login\loginJFrame$1.class
-za\ac\cput\Users\RemoveUser.class
-za\ac\cput\Users\Users$4.class
-za\ac\cput\Users\AddUser.class
-za\ac\cput\Login\loginJFrame$3.class
-za\ac\cput\Users\Users$1.class
-za\ac\cput\Users\AddUser$1.class
-za\ac\cput\Users\AddUser$3.class
-za\ac\cput\Users\AddUser$6.class
-za\ac\cput\Home\Home$4.class
-za\ac\cput\Users\Users.class
-za\ac\cput\DBConnection\DBConnection.class
-za\ac\cput\Users\AddUser$5.class
-za\ac\cput\Users\Users$3.class
-za\ac\cput\Home\Home$3.class
-=======
 za\ac\cput\Login\loginJFrame.class
 za\ac\cput\DBConnection\DBConnection.class
 za\ac\cput\Home\Home$2.class
 za\ac\cput\Login\loginJFrame$1.class
->>>>>>> cf33804f290d08f4b1542fcec11c67a157ed9925
 za\ac\cput\group23\inventory_system_group23_jversion\App.class
 za\ac\cput\Home\Home$1.class
 za\ac\cput\Login\loginJFrame$2.class
-za\ac\cput\Users\Users$5.class
 za\ac\cput\Products\removeInventory$1.class
-<<<<<<< HEAD
-<<<<<<< HEAD
-za\ac\cput\dao\ProductDAO.class
-=======
->>>>>>> fc183ec945a3039fa7764197df3504f875228046
-=======
 za\ac\cput\Products\removeInventory$2.class
->>>>>>> cf33804f290d08f4b1542fcec11c67a157ed9925
