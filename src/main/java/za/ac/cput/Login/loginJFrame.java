@@ -238,6 +238,19 @@ public class loginJFrame extends javax.swing.JFrame {
         });
     }
 
+    private boolean isUserRegistered(String email) 
+    {
+        User user = dbOperation.getUser(email);
+        return (user != null);
+    }
+
+    private boolean isPasswordAMatch(String email, String password) 
+    {
+        String userPassword = dbOperation.getUser(email).getPassword();
+        boolean isEqual = userPassword.equals(password);
+        return isEqual;
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
