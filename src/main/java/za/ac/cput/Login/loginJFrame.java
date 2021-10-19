@@ -257,6 +257,7 @@ public class loginJFrame extends javax.swing.JFrame {
         return isEqual;
     }
 
+    private UserDBOperations dbOperations = new UserDBOperations();
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
