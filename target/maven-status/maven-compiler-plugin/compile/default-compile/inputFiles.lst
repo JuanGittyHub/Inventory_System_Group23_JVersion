@@ -1,29 +1,6 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-C:\Users\Juan\Documents\NetBeansProjects\Inventory_System_Group23_JVersion\src\main\java\za\ac\cput\DBConnection\DBConnection.java
-C:\Users\Juan\Documents\NetBeansProjects\Inventory_System_Group23_JVersion\src\main\java\za\ac\cput\Home\Home.java
-C:\Users\Juan\Documents\NetBeansProjects\Inventory_System_Group23_JVersion\src\main\java\za\ac\cput\Login\loginJFrame.java
-C:\Users\Juan\Documents\NetBeansProjects\Inventory_System_Group23_JVersion\src\main\java\za\ac\cput\dao\ProductDAO.java
-C:\Users\Juan\Documents\NetBeansProjects\Inventory_System_Group23_JVersion\src\main\java\za\ac\cput\group23\inventory_system_group23_jversion\App.java
-C:\Users\Juan\Documents\NetBeansProjects\Inventory_System_Group23_JVersion\src\main\java\za\ac\cput\Products\Products.java
-C:\Users\Juan\Documents\NetBeansProjects\Inventory_System_Group23_JVersion\src\main\java\za\ac\cput\Products\removeInventory.java
-=======
->>>>>>> fc183ec945a3039fa7764197df3504f875228046
-C:\Users\Mbuso Kotob's\Documents\NetBeansProjects\Inventory_System_Group23_JVersion\src\main\java\za\ac\cput\Users\RemoveUser.java
-C:\Users\Mbuso Kotob's\Documents\NetBeansProjects\Inventory_System_Group23_JVersion\src\main\java\za\ac\cput\DBConnection\DBConnection.java
-C:\Users\Mbuso Kotob's\Documents\NetBeansProjects\Inventory_System_Group23_JVersion\src\main\java\za\ac\cput\Users\AddUser.java
-C:\Users\Mbuso Kotob's\Documents\NetBeansProjects\Inventory_System_Group23_JVersion\src\main\java\za\ac\cput\Users\User.java
-C:\Users\Mbuso Kotob's\Documents\NetBeansProjects\Inventory_System_Group23_JVersion\src\main\java\za\ac\cput\Home\Home.java
-C:\Users\Mbuso Kotob's\Documents\NetBeansProjects\Inventory_System_Group23_JVersion\src\main\java\za\ac\cput\Login\loginJFrame.java
-C:\Users\Mbuso Kotob's\Documents\NetBeansProjects\Inventory_System_Group23_JVersion\src\main\java\za\ac\cput\Products\removeInventory.java
-C:\Users\Mbuso Kotob's\Documents\NetBeansProjects\Inventory_System_Group23_JVersion\src\main\java\za\ac\cput\Users\Users.java
-C:\Users\Mbuso Kotob's\Documents\NetBeansProjects\Inventory_System_Group23_JVersion\src\main\java\za\ac\cput\group23\inventory_system_group23_jversion\App.java
-C:\Users\Mbuso Kotob's\Documents\NetBeansProjects\Inventory_System_Group23_JVersion\src\main\java\za\ac\cput\Products\Products.java
-=======
-C:\Users\Lenovo\Downloads\Inventory_System_Group23_JVersion-master\Inventory_System_Group23_JVersion-master\src\main\java\za\ac\cput\Home\Home.java
-C:\Users\Lenovo\Downloads\Inventory_System_Group23_JVersion-master\Inventory_System_Group23_JVersion-master\src\main\java\za\ac\cput\Products\removeInventory.java
-C:\Users\Lenovo\Downloads\Inventory_System_Group23_JVersion-master\Inventory_System_Group23_JVersion-master\src\main\java\za\ac\cput\DBConnection\DBConnection.java
-C:\Users\Lenovo\Downloads\Inventory_System_Group23_JVersion-master\Inventory_System_Group23_JVersion-master\src\main\java\za\ac\cput\Login\loginJFrame.java
-C:\Users\Lenovo\Downloads\Inventory_System_Group23_JVersion-master\Inventory_System_Group23_JVersion-master\src\main\java\za\ac\cput\Products\Products.java
-C:\Users\Lenovo\Downloads\Inventory_System_Group23_JVersion-master\Inventory_System_Group23_JVersion-master\src\main\java\za\ac\cput\group23\inventory_system_group23_jversion\App.java
->>>>>>> cf33804f290d08f4b1542fcec11c67a157ed9925
+C:\Users\Lenovo\Downloads\Inventory_System_Group23_JVersion-master (1)\Inventory_System_Group23_JVersion-master\src\main\java\za\ac\cput\Login\loginJFrame.java
+C:\Users\Lenovo\Downloads\Inventory_System_Group23_JVersion-master (1)\Inventory_System_Group23_JVersion-master\src\main\java\za\ac\cput\group23\inventory_system_group23_jversion\App.java
+C:\Users\Lenovo\Downloads\Inventory_System_Group23_JVersion-master (1)\Inventory_System_Group23_JVersion-master\src\main\java\za\ac\cput\Products\Products.java
+C:\Users\Lenovo\Downloads\Inventory_System_Group23_JVersion-master (1)\Inventory_System_Group23_JVersion-master\src\main\java\za\ac\cput\DBConnection\DBConnection.java
+C:\Users\Lenovo\Downloads\Inventory_System_Group23_JVersion-master (1)\Inventory_System_Group23_JVersion-master\src\main\java\za\ac\cput\Home\Home.java
+C:\Users\Lenovo\Downloads\Inventory_System_Group23_JVersion-master (1)\Inventory_System_Group23_JVersion-master\src\main\java\za\ac\cput\Products\removeInventory.java
