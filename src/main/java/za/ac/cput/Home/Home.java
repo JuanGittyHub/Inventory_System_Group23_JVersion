@@ -8,6 +8,7 @@ package za.ac.cput.Home;
 import java.awt.Color;
 import javax.swing.ImageIcon;
 import za.ac.cput.Products.removeInventory;
+import za.ac.cput.Users.Users;
 
 /**
  *
@@ -42,7 +43,8 @@ public class Home extends javax.swing.JFrame {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+    private void initComponents()
+    {
 
         jPanel1 = new javax.swing.JPanel();
         ProductDisplay = new javax.swing.JButton();
@@ -75,14 +77,23 @@ public class Home extends javax.swing.JFrame {
 
         removeInventory.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         removeInventory.setText("Remove Inventory");
-        removeInventory.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        removeInventory.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 removeInventoryActionPerformed(evt);
             }
         });
 
         systemUsers.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         systemUsers.setText("Users");
+        systemUsers.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                systemUsersActionPerformed(evt);
+            }
+        });
 
         systemNotifications.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         systemNotifications.setText("Notifications");
@@ -150,6 +161,19 @@ public class Home extends javax.swing.JFrame {
         
         this.setVisible(false);
     }//GEN-LAST:event_removeInventoryActionPerformed
+
+    private void systemUsersActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_systemUsersActionPerformed
+    {//GEN-HEADEREND:event_systemUsersActionPerformed
+        // TODO add your handling code here:
+        Users usersView = new Users();
+        usersView.setVisible(true);
+    }//GEN-LAST:event_systemUsersActionPerformed
+
+    private void addInventoryActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_addInventoryActionPerformed
+    {//GEN-HEADEREND:event_addInventoryActionPerformed
+        // TODO add your handling code here:
+        AddProduct 
+    }//GEN-LAST:event_addInventoryActionPerformed
 
     /**
      * @param args the command line arguments

@@ -91,14 +91,14 @@ public class FetchUser extends javax.swing.JFrame {
 
     private void fetchUserBttnActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_fetchUserBttnActionPerformed
     {//GEN-HEADEREND:event_fetchUserBttnActionPerformed
-        if(userIdInputField.getText().isEmpty())
+        if(isValidId(userIdInputField.getText()))
         {
-            JOptionPane.showMessageDialog(null, "Please enter User ID");
-        }else{
             int id = Integer.parseInt(this.userIdInputField.getText().trim());
             UpdateUser updateUserView = new UpdateUser(id);
             updateUserView.setVisible(true);
-            this.setVisible(false);
+            this.setVisible(false);  
+        }else{
+            JOptionPane.showMessageDialog(null, "Invalid User ID");
         }
     }//GEN-LAST:event_fetchUserBttnActionPerformed
 
@@ -146,7 +146,13 @@ public class FetchUser extends javax.swing.JFrame {
             }
         });
     }
-
+    
+    private boolean isValidId(String id)
+    {
+        return (id.isEmpty()) ? false : Integer.parseInt(userIdInputField.getText()) >= MINIMUM_VALID_ID;
+    }
+            
+    private final int MINIMUM_VALID_ID = 100;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton fetchUserBttn;
     private javax.swing.JLabel userIDLabel;

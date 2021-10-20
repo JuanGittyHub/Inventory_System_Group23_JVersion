@@ -99,6 +99,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Add Inventory"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addInventoryActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="updateInventory">
           <Properties>
@@ -126,6 +129,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Users"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="systemUsersActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="systemNotifications">
           <Properties>

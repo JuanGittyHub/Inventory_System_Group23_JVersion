@@ -16,7 +16,7 @@ import za.ac.cput.dao.ProductDAO;
  *
  * @author Juan
  */
-public class addProduct extends javax.swing.JFrame {
+public class AddProduct extends javax.swing.JFrame {
     
     Products product;
     ProductDAO dao;
@@ -24,7 +24,7 @@ public class addProduct extends javax.swing.JFrame {
      * Creates new form addProduct
      * @throws java.sql.SQLException
      */
-    public addProduct() throws SQLException {
+    public AddProduct() throws SQLException {
         initComponents();
         dao = new ProductDAO();
     }
@@ -36,7 +36,8 @@ public class addProduct extends javax.swing.JFrame {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+    private void initComponents()
+    {
 
         lblProductName = new javax.swing.JLabel();
         lblPrice = new javax.swing.JLabel();
@@ -70,24 +71,30 @@ public class addProduct extends javax.swing.JFrame {
 
         btnSave.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         btnSave.setText("Save");
-        btnSave.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        btnSave.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 btnSaveActionPerformed(evt);
             }
         });
 
         btnClear.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         btnClear.setText("Clear");
-        btnClear.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        btnClear.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 btnClearActionPerformed(evt);
             }
         });
 
         btnExit.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         btnExit.setText("Exit");
-        btnExit.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        btnExit.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 btnExitActionPerformed(evt);
             }
         });
@@ -108,8 +115,10 @@ public class addProduct extends javax.swing.JFrame {
         btnHome.setBackground(new java.awt.Color(255, 204, 102));
         btnHome.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         btnHome.setText("HOME");
-        btnHome.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        btnHome.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 btnHomeActionPerformed(evt);
             }
         });
@@ -209,7 +218,7 @@ public class addProduct extends javax.swing.JFrame {
         try {
             product = dao.save(p);
         } catch (SQLException ex) {
-            Logger.getLogger(addProduct.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(AddProduct.class.getName()).log(Level.SEVERE, null, ex);
         }
         
         if(product.equals(p)){
@@ -257,23 +266,24 @@ public class addProduct extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(addProduct.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AddProduct.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(addProduct.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AddProduct.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(addProduct.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AddProduct.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(addProduct.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AddProduct.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
-                    new addProduct().setVisible(true);
+                    new AddProduct().setVisible(true);
                 } catch (SQLException ex) {
-                    Logger.getLogger(addProduct.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(AddProduct.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
         });

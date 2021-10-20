@@ -23,47 +23,48 @@ public class removeInventory extends javax.swing.JFrame {
     /**
      * Creates new form removeInventory
      */
-    public removeInventory() {
+    public removeInventory()
+    {
         initComponents();
-        
-         ImageIcon icon;
-         icon = new ImageIcon("Logo/logos.jpg");
-         this.setIconImage(icon.getImage());
-         Color orangeh = new Color(250,164,96);
-           Color purpley = new Color(179,156,190);
-         submitButton.setBackground(orangeh);
-         jButton1.setBackground(purpley);
-         headerPanel.setBackground(purpley);
+
+        ImageIcon icon;
+        icon = new ImageIcon("Logo/logos.jpg");
+        this.setIconImage(icon.getImage());
+        Color orangeh = new Color(250, 164, 96);
+        Color purpley = new Color(179, 156, 190);
+        submitButton.setBackground(orangeh);
+        jButton1.setBackground(purpley);
+        headerPanel.setBackground(purpley);
     }
-    
-    public void RemoveInventory(){
-        if(barCode.getText().isEmpty()){
-            JOptionPane.showMessageDialog(null, "Cannot be empty");
+
+    public void RemoveInventory()
+    {
+        if(isValidBarcode(barCode.getText()))
+        {
+            try
+            {
+                String bcode = barCode.getText();
+                String url = "jdbc:derby://localhost:1527/Group23";
+                String user = "project";
+                String password = "admin";
+                Connection con = DriverManager.getConnection(url, user, password);
+                String deletion = ("DELETE FROM PRODUCTS WHERE barcode = ?");
+                PreparedStatement ps = con.prepareStatement(deletion);
+                ps.setString(1, bcode);
+                ps.executeUpdate();
+
+                JOptionPane.showMessageDialog(null, "Product successfully deleted");
+                barCode.setText(" ");
+                con.close();
+
+            } catch (SQLException ab)
+            {
+                System.err.println(ab.getMessage());
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Invalid Barcode");
         }
-        else{
-         try{
-            String bcode = barCode.getText();
-        String url = "jdbc:derby://localhost:1527/Group23";
-        String user = "project";
-        String password = "admin";
-           Connection con = DriverManager.getConnection(url, user, password);
-            String deletion = ("DELETE FROM PRODUCTS WHERE barcode = ?");
-            PreparedStatement ps = con.prepareStatement(deletion);
-            ps.setString(1, bcode);
-            ps.executeUpdate();
-            
-            JOptionPane.showMessageDialog(null, "Product successfully deleted");
-            barCode.setText(" ");
-            con.close();
-        
-      
-        }
-         catch(SQLException ab){
-             ab.getMessage();
     }
-    }
-        }
-    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -181,62 +182,71 @@ public class removeInventory extends javax.swing.JFrame {
 
     private void submitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitButtonActionPerformed
         // TODO add your handling code here:
-     
-   if (evt.getSource()== submitButton){
-     
-       RemoveInventory();
-       }
-         
-       
-        
 
-    
-        
+        if (evt.getSource() == submitButton)
+        {
+            RemoveInventory();
+        }
     }//GEN-LAST:event_submitButtonActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         Home home = new Home();
         home.setVisible(true);
-        
+
         this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+    public static void main(String args[])
+    {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+        try
+        {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels())
+            {
+                if ("Nimbus".equals(info.getName()))
+                {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
+        } catch (ClassNotFoundException ex)
+        {
             java.util.logging.Logger.getLogger(removeInventory.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
+        } catch (InstantiationException ex)
+        {
             java.util.logging.Logger.getLogger(removeInventory.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
+        } catch (IllegalAccessException ex)
+        {
             java.util.logging.Logger.getLogger(removeInventory.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (javax.swing.UnsupportedLookAndFeelException ex)
+        {
             java.util.logging.Logger.getLogger(removeInventory.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
+            public void run()
+            {
                 new removeInventory().setVisible(true);
             }
         });
     }
+    
+    private boolean isValidBarcode(String barcode)
+    {
+        return (barcode.isEmpty()) ? false : barcode.length() == BARCODE_LENGTH;
+    }
 
+    private final int BARCODE_LENGTH = 12;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField barCode;
     private javax.swing.JPanel headerPanel;
