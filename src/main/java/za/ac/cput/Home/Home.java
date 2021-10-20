@@ -7,6 +7,7 @@ package za.ac.cput.Home;
 
 import java.awt.Color;
 import javax.swing.ImageIcon;
+import za.ac.cput.Products.ViewProducts;
 import za.ac.cput.Products.removeInventory;
 
 /**
@@ -59,16 +60,14 @@ public class Home extends javax.swing.JFrame {
 
         ProductDisplay.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         ProductDisplay.setText("Products");
+        ProductDisplay.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ProductDisplayActionPerformed(evt);
+            }
+        });
 
         addInventory.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         addInventory.setText("Add Inventory");
-        addInventory.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                addInventoryActionPerformed(evt);
-            }
-        });
 
         updateInventory.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         updateInventory.setText("Update Inventory");
@@ -151,6 +150,16 @@ public class Home extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_removeInventoryActionPerformed
 
+    private void ProductDisplayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProductDisplayActionPerformed
+        // TODO add your handling code here:
+        ViewProducts vp = new ViewProducts();
+        vp.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_ProductDisplayActionPerformed
+
+    private void addInventoryActionPerformed(java.awt.event.ActionEvent evt){
+        
+    }
     /**
      * @param args the command line arguments
      */

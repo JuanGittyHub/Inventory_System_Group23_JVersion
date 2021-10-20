@@ -189,7 +189,7 @@ public class loginJFrame extends javax.swing.JFrame {
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) 
     {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
-    //GEN-LAST:event_jTextField1ActionPerformed
+//GEN-LAST:event_jTextField1ActionPerformed
 
     
     
@@ -207,7 +207,7 @@ public class loginJFrame extends javax.swing.JFrame {
           jTextField1.setText(" ");
           jPasswordField2.setText(" ");
         }
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }                                        
 
     /**
      * @param args the command line arguments
@@ -246,18 +246,19 @@ public class loginJFrame extends javax.swing.JFrame {
 
     private boolean isUserRegistered(String email) 
     {
-        User user = dbOperation.getUser(email);
+        User user = dbOperations.getUser(email);
         return (user != null);
     }
 
     private boolean isPasswordAMatch(String email, String password) 
     {
-        String userPassword = dbOperation.getUser(email).getPassword();
+        String userPassword = dbOperations.getUser(email).getPassword();
         boolean isEqual = userPassword.equals(password);
         return isEqual;
     }
 
     private UserDBOperations dbOperations = new UserDBOperations();
+    private javax.swing.JPasswordField jPasswordField1;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
