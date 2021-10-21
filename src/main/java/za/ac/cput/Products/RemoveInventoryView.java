@@ -13,6 +13,7 @@ import java.sql.SQLException;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import za.ac.cput.Home.HomeView;
+import za.ac.cput.group23.inventory_system_group23_jversion.GUIUtility;
 
 /**
  *
@@ -39,7 +40,7 @@ public class RemoveInventoryView extends javax.swing.JFrame {
 
     public void RemoveInventory()
     {
-        if (isValidBarcode(barCode.getText()))
+        if (GUIUtility.isValidBarcode(barCode.getText()))
         {
             try
             {
@@ -250,12 +251,6 @@ public class RemoveInventoryView extends javax.swing.JFrame {
         });
     }
 
-    private boolean isValidBarcode(String barcode)
-    {
-        return (barcode.isEmpty()) ? false : barcode.length() == BARCODE_LENGTH;
-    }
-
-    private final int BARCODE_LENGTH = 12;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField barCode;
     private javax.swing.JPanel headerPanel;
