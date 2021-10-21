@@ -1,10 +1,12 @@
 
 package za.ac.cput.Login;
 
+import java.awt.Color;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
-import za.ac.cput.Home.Home;
+import za.ac.cput.Home.HomeView;
+import za.ac.cput.Users.User;
 import za.ac.cput.Users.UserDBOperations;
 
 /**
@@ -13,9 +15,9 @@ import za.ac.cput.Users.UserDBOperations;
  * Email: john.doe@example.com 
  * Password: admin123@example.com
  */
-public class loginJFrame extends javax.swing.JFrame {
+public class LoginView extends javax.swing.JFrame {
 
-    public loginJFrame() {
+    public LoginView() {
         initComponents();
          ImageIcon icon;
          icon = new ImageIcon("Logo/logos.jpg");
@@ -32,10 +34,11 @@ public class loginJFrame extends javax.swing.JFrame {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+    private void initComponents()
+    {
 
         jSlider1 = new javax.swing.JSlider();
-        //passwordFields = new javax.swing.JPasswordField();
+        jPasswordField1 = new javax.swing.JPasswordField();
         jPanel2 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -44,7 +47,7 @@ public class loginJFrame extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         passwordField = new javax.swing.JPasswordField();
 
-        passwordField.setText("passwordField");
+        jPasswordField1.setText("jPasswordField1");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -67,44 +70,18 @@ public class loginJFrame extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel1.setText("USERNAME");
 
-        jTextField1.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField1.setForeground(new java.awt.Color(255, 153, 0));
-        jTextField1.setActionCommand("txtUsername");
-        jTextField1.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(255, 153, 0)));
-        jTextField1.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                jTextField1ActionPerformed(evt);
-            }
-        });
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel2.setText("PASSWORD");
 
-        jButton1.setBackground(new java.awt.Color(255, 153, 0));
-        jButton1.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
+        jButton1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Login");
-        jButton1.setActionCommand("JLogin");
+        jButton1.setText("LOGIN");
         jButton1.addActionListener(new java.awt.event.ActionListener()
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
             {
-                jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-                jLabel2.setText("PASSWORD");
-                jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-                jLabel2.setText("PASSWORD");
-
-                jButton1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-                jButton1.setForeground(new java.awt.Color(255, 255, 255));
-                jButton1.setText("LOGIN");
-
-                jButton1.addActionListener(new java.awt.event.ActionListener() 
-                {
-                    public void actionPerformed(java.awt.event.ActionEvent evt) 
-                    {
-                        jButton1ActionPerformed(evt);
-                    }
-                });
-            } 
+                jButton1ActionPerformed(evt);
+            }
         });
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
@@ -169,7 +146,7 @@ public class loginJFrame extends javax.swing.JFrame {
             if(isPasswordAMatch(userEmail, userPassword))
             {
                 JOptionPane.showMessageDialog(null, "successfully login");
-                Home homepage = new Home();
+                HomeView homepage = new HomeView();
                 homepage.setVisible(true);
                 this.setVisible(false);
             }else{
@@ -195,7 +172,7 @@ public class loginJFrame extends javax.swing.JFrame {
         String pword = passwordField.getText();
         if(uname.equals("admin") && pword.equals("admin")){
             JOptionPane.showMessageDialog(null, "successfully login");   
-            Home homepage = new Home();
+            HomeView homepage = new HomeView();
             homepage.setVisible(true);       
             this.setVisible(false);
         } 
@@ -223,20 +200,21 @@ public class loginJFrame extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(loginJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LoginView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(loginJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LoginView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(loginJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LoginView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(loginJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LoginView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new loginJFrame().setVisible(true);
+                new LoginView().setVisible(true);
             }
         });
     }
@@ -261,7 +239,7 @@ public class loginJFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel6;
-    private javax.swing.JPasswordField passwordFieldUnsued;
+    private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JPasswordField passwordField;
     private javax.swing.JSlider jSlider1;
     private javax.swing.JTextField jTextField1;

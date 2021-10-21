@@ -9,22 +9,25 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
-import za.ac.cput.Home.Home;
+import za.ac.cput.Home.HomeView;
 import za.ac.cput.dao.ProductDAO;
 
 /**
  *
  * @author Juan
  */
-public class AddProduct extends javax.swing.JFrame {
-    
+public class AddProductView extends javax.swing.JFrame {
+
     Products product;
     ProductDAO dao;
+
     /**
      * Creates new form addProduct
+     *
      * @throws java.sql.SQLException
      */
-    public AddProduct() throws SQLException {
+    public AddProductView() throws SQLException
+    {
         initComponents();
         dao = new ProductDAO();
     }
@@ -219,18 +222,21 @@ public class AddProduct extends javax.swing.JFrame {
         double productPrice = Double.parseDouble(txtPrice.getText());
         int productQuantity = Integer.parseInt(txtQuantity.getText());
         long productBarcode = Integer.parseInt(txtBarcode.getText());
-        
+
         Products p = new Products(productName, productPrice, productQuantity, productBarcode);
-        try {
+        try
+        {
             product = dao.save(p);
-        } catch (SQLException ex) {
-            Logger.getLogger(AddProduct.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex)
+        {
+            Logger.getLogger(AddProductView.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        if(product.equals(p)){
+
+        if (product.equals(p))
+        {
             JOptionPane.showMessageDialog(null, "Success! new Product has been added.");
-        }
-        else {
+        } else
+        {
             JOptionPane.showMessageDialog(null, "Error could not add new product");
         }
     }//GEN-LAST:event_btnSaveActionPerformed
@@ -245,7 +251,7 @@ public class AddProduct extends javax.swing.JFrame {
 
     private void btnHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHomeActionPerformed
         // TODO add your handling code here:
-        Home hp = new Home();
+        HomeView hp = new HomeView();
         hp.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnHomeActionPerformed
@@ -263,38 +269,51 @@ public class AddProduct extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+    public static void main(String args[])
+    {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+        try
+        {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels())
+            {
+                if ("Nimbus".equals(info.getName()))
+                {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(AddProduct.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(AddProduct.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(AddProduct.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(AddProduct.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex)
+        {
+            java.util.logging.Logger.getLogger(AddProductView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex)
+        {
+            java.util.logging.Logger.getLogger(AddProductView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex)
+        {
+            java.util.logging.Logger.getLogger(AddProductView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex)
+        {
+            java.util.logging.Logger.getLogger(AddProductView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                try {
-                    new AddProduct().setVisible(true);
-                } catch (SQLException ex) {
-                    Logger.getLogger(AddProduct.class.getName()).log(Level.SEVERE, null, ex);
+            public void run()
+            {
+                try
+                {
+                    new AddProductView().setVisible(true);
+                } catch (SQLException ex)
+                {
+                    Logger.getLogger(AddProductView.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
         });
