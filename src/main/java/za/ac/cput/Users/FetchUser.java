@@ -36,6 +36,7 @@ public class FetchUser extends javax.swing.JFrame {
         fetchUserBttn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setBackground(new java.awt.Color(178, 149, 181));
 
         userIDLabel.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         userIDLabel.setText("User ID");

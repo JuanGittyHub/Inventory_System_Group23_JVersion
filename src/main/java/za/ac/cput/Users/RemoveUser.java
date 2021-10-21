@@ -35,6 +35,7 @@ public class RemoveUser extends javax.swing.JFrame {
         removeUserBtn = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(178, 149, 213));
 
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         jLabel1.setText("Remove User");
@@ -42,6 +43,7 @@ public class RemoveUser extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         jLabel2.setText("User ID");
 
+        removeUserField.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(254, 173, 104), 2, true));
         removeUserField.addActionListener(new java.awt.event.ActionListener()
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
@@ -50,7 +52,12 @@ public class RemoveUser extends javax.swing.JFrame {
             }
         });
 
+        removeUserBtn.setBackground(new java.awt.Color(179, 133, 213));
+        removeUserBtn.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        removeUserBtn.setForeground(new java.awt.Color(255, 255, 255));
         removeUserBtn.setText("Remove User");
+        removeUserBtn.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(254, 173, 104), 1, true));
+        removeUserBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         removeUserBtn.addActionListener(new java.awt.event.ActionListener()
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
