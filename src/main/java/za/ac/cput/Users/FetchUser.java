@@ -37,9 +37,10 @@ public class FetchUser extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        userIDLabel.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        userIDLabel.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         userIDLabel.setText("User ID");
 
+        userIdInputField.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(254, 173, 104), 2, true));
         userIdInputField.addActionListener(new java.awt.event.ActionListener()
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
@@ -48,6 +49,9 @@ public class FetchUser extends javax.swing.JFrame {
             }
         });
 
+        fetchUserBttn.setBackground(new java.awt.Color(178, 149, 213));
+        fetchUserBttn.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        fetchUserBttn.setForeground(new java.awt.Color(255, 255, 255));
         fetchUserBttn.setText("Fetch User");
         fetchUserBttn.addActionListener(new java.awt.event.ActionListener()
         {
@@ -72,13 +76,13 @@ public class FetchUser extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(41, 41, 41)
+                .addGap(40, 40, 40)
                 .addComponent(userIDLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(35, 35, 35)
                 .addComponent(userIdInputField, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(fetchUserBttn, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(141, Short.MAX_VALUE))
+                .addContainerGap(41, Short.MAX_VALUE))
         );
 
         pack();

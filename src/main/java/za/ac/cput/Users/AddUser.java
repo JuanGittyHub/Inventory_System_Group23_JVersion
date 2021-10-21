@@ -145,6 +145,7 @@ public class AddUser extends javax.swing.JFrame {
         button1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         button1.setForeground(new java.awt.Color(255, 255, 255));
         button1.setLabel("Back");
+        button1.setName("backBtn"); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

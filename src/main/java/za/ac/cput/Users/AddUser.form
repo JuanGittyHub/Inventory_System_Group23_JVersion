@@ -285,6 +285,7 @@
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
         <Property name="label" type="java.lang.String" value="Back"/>
+        <Property name="name" type="java.lang.String" value="backBtn" noResource="true"/>
       </Properties>
       <AccessibilityProperties>
         <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="addUsersBackBtn"/>
