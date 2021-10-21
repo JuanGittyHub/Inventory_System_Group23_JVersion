@@ -74,6 +74,11 @@ public class HomeView extends javax.swing.JFrame {
 
         addInventory.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         addInventory.setText("Add Inventory");
+        addInventory.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addInventoryActionPerformed(evt);
+            }
+        });
 
         updateInventory.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         updateInventory.setText("Update Inventory");

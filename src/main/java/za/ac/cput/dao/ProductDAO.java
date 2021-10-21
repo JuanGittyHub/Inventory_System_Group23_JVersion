@@ -29,7 +29,7 @@ public class ProductDAO {
         ps.setString(1, product.getProductName());
         ps.setDouble(2, product.getProductPrice());
         ps.setInt(3, product.getProductQuantity());
-        ps.setLong(4, product.getProductBarcode());
+        ps.setString(4, product.getProductBarcode());
         
         ps.executeUpdate();
         ps.close();

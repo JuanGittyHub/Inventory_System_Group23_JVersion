@@ -30,6 +30,7 @@ public class AddProductView extends javax.swing.JFrame {
     public AddProductView() throws SQLException
     {
         initComponents();
+        hideErrorMessages();
         dao = new ProductDAO();
     }
 
@@ -61,7 +62,7 @@ public class AddProductView extends javax.swing.JFrame {
         invalidAmountErrorLabel = new javax.swing.JLabel();
         invalidProductBarcodeErrorLabel = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
 
         lblProductName.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -74,7 +75,7 @@ public class AddProductView extends javax.swing.JFrame {
         lblQuantity.setText("Amount of Product:");
 
         lblBarcode.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        lblBarcode.setText("Product Barcode");
+        lblBarcode.setText("Product ID:");
 
         btnSave.setBackground(new java.awt.Color(178, 149, 213));
         btnSave.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -251,7 +252,7 @@ public class AddProductView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
-
+        Products newProduct = new Products();
         _productName = txtProductName.getText();
         _productPrice = txtPrice.getText();
         _productQuantity = txtQuantity.getText();
@@ -262,16 +263,16 @@ public class AddProductView extends javax.swing.JFrame {
             validateFormData();
             String productName = _productName;
             double productPrice = Double.parseDouble(_productPrice);
-            int productQuantity = Integer.parseInt(_productPrice);
-            long productBarcode = Integer.parseInt(_productBarcode);
-            Products p = new Products(productName, productPrice, productQuantity, productBarcode);
-            product = dao.save(p);
-        } catch (SQLException ex)
+            int productQuantity = Integer.parseInt(_productQuantity);
+            String productBarcode = _productBarcode;
+            newProduct = new Products(productName, productPrice, productQuantity, productBarcode);
+            product = dao.save(newProduct);
+        } catch (Exception ex)
         {
             Logger.getLogger(AddProductView.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        if (product.equals(p))
+        if (product.equals(newProduct))
         {
             JOptionPane.showMessageDialog(null, "Success! new Product has been added.");
         } else
@@ -281,7 +282,7 @@ public class AddProductView extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSaveActionPerformed
 
     private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
-        // TODO add your handling code here:
+        hideErrorMessages();
         txtProductName.setText("");
         txtPrice.setText("");
         txtQuantity.setText("");
@@ -305,20 +306,34 @@ public class AddProductView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtQuantityActionPerformed
 
-    private void validateFormData()
+    private void validateFormData() throws Exception
     {
         boolean isErrorFound = false;
         if(!GUIUtility.isNameValid(_productName))
         {
             this.invalidProductNameErrorLabel.setVisible(true);
+            isErrorFound = true;
         }
         
         if(!GUIUtility.isValidProductPrice(_productPrice))
         {
             this.invalidProductPriceErrorLabel.setVisible(true);
+            isErrorFound = true;
         }
         
-        if()
+        if(!GUIUtility.isValidUnsignedNumber(_productQuantity))
+        {
+            this.invalidAmountErrorLabel.setVisible(true);
+            isErrorFound = true;
+        }
+        
+        if(!GUIUtility.isValidBarcode(_productBarcode))
+        {
+            this.invalidProductBarcodeErrorLabel.setVisible(true);
+            isErrorFound = true;
+        }
+        
+        if(isErrorFound) throw new Exception("Invalid Data Received");
     }
     
     private void hideErrorMessages()

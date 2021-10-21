@@ -17,6 +17,7 @@ public class GUIUtility {
     public static boolean isValidUnsignedNumber(String number)
     {
         var invalidCharsFound = 0;
+        if (number.isBlank()) return false;
         for (var i = 0; i < number.length(); ++i)
         {
             if(!Character.isDigit(number.charAt(i))) 
@@ -85,6 +86,24 @@ public class GUIUtility {
             }
         }
         return (cellphoneNumberLength == 10);
+    }
+    
+    public static boolean isValidUserID(String ID)
+    {
+        int errorCount = 0;
+        for (int i = 0; i < ID.length(); ++i)
+        {
+            if (!Character.isDigit(ID.charAt(i)))
+            {
+                ++errorCount;
+            }
+        }
+        return (errorCount == 0) ? isUnsigned(ID) : false;
+    }
+    
+    private static boolean isUnsigned(String number)
+    {
+       return Integer.parseInt(number) > 0; 
     }
 
     public static void main(String args[])

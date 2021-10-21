@@ -6,9 +6,17 @@ public class Products {
     private String productName;
     private double productPrice;
     private int productQuantity;
-    private long productBarcode;
+    private String productBarcode;
 
-    public Products(String productName, double productPrice, int productQuantity, long productBarcode) {
+    public Products()
+    {
+        this.productName = "";
+        this.productPrice = 0.0d;
+        this.productQuantity = 0;
+        this.productBarcode = "";
+    }
+    
+    public Products(String productName, double productPrice, int productQuantity, String productBarcode) {
         this.productName = productName;
         this.productPrice = productPrice;
         this.productQuantity = productQuantity;
@@ -39,11 +47,11 @@ public class Products {
         this.productQuantity = productQuantity;
     }
 
-    public long getProductBarcode() {
+    public String getProductBarcode() {
         return productBarcode;
     }
 
-    public void setProductBarcode(long productBarcode) {
+    public void setProductBarcode(String productBarcode) {
         this.productBarcode = productBarcode;
     }
 
