@@ -42,7 +42,7 @@ public class UsersView extends javax.swing.JFrame {
         removeUserBtn = new javax.swing.JButton();
         addUserBtn = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         usersTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][]

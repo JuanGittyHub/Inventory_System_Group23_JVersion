@@ -15,6 +15,7 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.Date;
 import za.ac.cput.DBConnection.DBConnection;
+import za.ac.cput.group23.inventory_system_group23_jversion.GUIUtility;
 
 /**
  *
@@ -28,6 +29,7 @@ public class AddUserView extends javax.swing.JFrame {
     public AddUserView()
     {
         initComponents();
+        hideErrorMessages();
     }
 
     /**
@@ -55,6 +57,10 @@ public class AddUserView extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         passwordInputField = new javax.swing.JTextField();
         assUserBackButton = new java.awt.Button();
+        invalidUserNameErrorLable = new javax.swing.JLabel();
+        invalidUserSurnameErrorLabel = new javax.swing.JLabel();
+        invalidUserEmailErrorLabel = new javax.swing.JLabel();
+        invalidUserCellphoneErrorLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(178, 149, 213));
@@ -154,6 +160,22 @@ public class AddUserView extends javax.swing.JFrame {
             }
         });
 
+        invalidUserNameErrorLable.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        invalidUserNameErrorLable.setForeground(new java.awt.Color(255, 0, 0));
+        invalidUserNameErrorLable.setText("Invalid Name");
+
+        invalidUserSurnameErrorLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        invalidUserSurnameErrorLabel.setForeground(new java.awt.Color(255, 0, 0));
+        invalidUserSurnameErrorLabel.setText("Invalid Surname");
+
+        invalidUserEmailErrorLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        invalidUserEmailErrorLabel.setForeground(new java.awt.Color(255, 0, 0));
+        invalidUserEmailErrorLabel.setText("Invalid Email");
+
+        invalidUserCellphoneErrorLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        invalidUserCellphoneErrorLabel.setForeground(new java.awt.Color(255, 0, 0));
+        invalidUserCellphoneErrorLabel.setText("Invalid Cellphone");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -163,27 +185,30 @@ public class AddUserView extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(userTypeComboBox, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(saveNewUserBtn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(cellphoneInputField, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lastNameInputField, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(firstNameInputField, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(emailInputField, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(passwordInputField, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 685, Short.MAX_VALUE)
-                                .addComponent(assUserBackButton, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(47, 47, 47))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(invalidUserCellphoneErrorLabel))
+                    .addComponent(userTypeComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(saveNewUserBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(cellphoneInputField)
+                    .addComponent(lastNameInputField)
+                    .addComponent(firstNameInputField)
+                    .addComponent(emailInputField)
+                    .addComponent(passwordInputField)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 685, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(assUserBackButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(invalidUserNameErrorLable, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(invalidUserSurnameErrorLabel, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(invalidUserEmailErrorLabel, javax.swing.GroupLayout.Alignment.TRAILING))))
+                .addGap(47, 47, 47))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -197,19 +222,27 @@ public class AddUserView extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(assUserBackButton, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
-                .addComponent(jLabel2)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(invalidUserNameErrorLable))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(firstNameInputField, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel3)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(invalidUserSurnameErrorLabel))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lastNameInputField, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel4)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(invalidUserEmailErrorLabel))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(emailInputField, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel5)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(invalidUserCellphoneErrorLabel))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(cellphoneInputField, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -242,12 +275,17 @@ public class AddUserView extends javax.swing.JFrame {
 
     private void saveNewUserBtnActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_saveNewUserBtnActionPerformed
     {//GEN-HEADEREND:event_saveNewUserBtnActionPerformed
-        // TODO add your handling code here:
-        extractValuesFromFormFields();
-        validateDataFromFormField();
-        saveNewUser();
-        resetFormFields();
-        this.setVisible(false);
+        try{
+            extractValuesFromFormFields();
+            validateDataFromFormFields();
+            saveNewUser();
+            resetFormFields();
+            this.setVisible(false);
+        }catch(Exception exception)
+        {
+            System.err.println(exception.getMessage());
+        }
+        
     }//GEN-LAST:event_saveNewUserBtnActionPerformed
 
     private void firstNameInputFieldActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_firstNameInputFieldActionPerformed
@@ -385,12 +423,42 @@ public class AddUserView extends javax.swing.JFrame {
         this.passwordInputField.setText("");
     }
     
-    private void validateDataFromFormField()
+    private void validateDataFromFormFields() throws Exception
     {
+        boolean isErrorFound = false;
+        if(!GUIUtility.isNameValid(firstName))
+        {
+            invalidUserNameErrorLable.setVisible(true);
+            isErrorFound = true;
+        }
         
+        if(!GUIUtility.isNameValid(lastName))
+        {
+            invalidUserSurnameErrorLabel.setVisible(true);
+            isErrorFound = true;
+        }
+        
+        if(!GUIUtility.isValidEmail(email))
+        {
+            invalidUserEmailErrorLabel.setVisible(true);
+            isErrorFound = true;
+        }
+        
+        if(!GUIUtility.isCellphoneNumberValid(cellphone))
+        {
+            invalidUserCellphoneErrorLabel.setVisible(true);
+            isErrorFound = true;
+        }
+        if(isErrorFound) throw new Exception("Invalid Data Received");
     }
     
-    
+    private void hideErrorMessages()
+    {
+        invalidUserCellphoneErrorLabel.setVisible(false);
+        invalidUserEmailErrorLabel.setVisible(false);
+        invalidUserNameErrorLable.setVisible(false);
+        invalidUserSurnameErrorLabel.setVisible(false);
+    }
     
     private int id = 0;
     private String firstName = "";
@@ -405,6 +473,10 @@ public class AddUserView extends javax.swing.JFrame {
     private javax.swing.JTextField cellphoneInputField;
     private javax.swing.JTextField emailInputField;
     private javax.swing.JTextField firstNameInputField;
+    private javax.swing.JLabel invalidUserCellphoneErrorLabel;
+    private javax.swing.JLabel invalidUserEmailErrorLabel;
+    private javax.swing.JLabel invalidUserNameErrorLable;
+    private javax.swing.JLabel invalidUserSurnameErrorLabel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

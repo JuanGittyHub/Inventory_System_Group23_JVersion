@@ -1,4 +1,3 @@
-
 package za.ac.cput.Login;
 
 import java.awt.Color;
@@ -11,19 +10,20 @@ import za.ac.cput.Users.UserDBOperations;
 
 /**
  * ADMIN LOGIN DETAILS
- * 
+ *
  * Email: john.doe@example.com 
  * Password: admin123@example.com
  */
 public class LoginView extends javax.swing.JFrame {
 
-    public LoginView() {
+    public LoginView()
+    {
         initComponents();
-         ImageIcon icon;
-         icon = new ImageIcon("Logo/logos.jpg");
-         this.setIconImage(icon.getImage());
-       
-        Color orangeh = new Color(250,164,96);
+        ImageIcon icon;
+        icon = new ImageIcon("Logo/logos.jpg");
+        this.setIconImage(icon.getImage());
+
+        Color orangeh = new Color(250, 164, 96);
         jButton1.setBackground(orangeh);
     }
 
@@ -141,71 +141,79 @@ public class LoginView extends javax.swing.JFrame {
 
         String userEmail = jTextField1.getText();
         String userPassword = new String(passwordField.getPassword());
-        
-        if(isUserRegistered(userEmail)){
-            if(isPasswordAMatch(userEmail, userPassword))
+
+        if (isUserRegistered(userEmail))
+        {
+            if (isPasswordAMatch(userEmail, userPassword))
             {
                 JOptionPane.showMessageDialog(null, "successfully login");
                 HomeView homepage = new HomeView();
                 homepage.setVisible(true);
                 this.setVisible(false);
-            }else{
-                JOptionPane.showMessageDialog(null, "incorrect password");  
+            } else
+            {
+                JOptionPane.showMessageDialog(null, "incorrect password");
                 passwordField.setText("");
             }
-        }
-        else{
-          JOptionPane.showMessageDialog(null, "incorrect email");  
-          jTextField1.setText("");
+        } else
+        {
+            JOptionPane.showMessageDialog(null, "incorrect email");
+            jTextField1.setText("");
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) 
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt)
     {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
 //GEN-LAST:event_jTextField1ActionPerformed
-
-    
-    
         // TODO add your handling code here:
-         String uname = jTextField1.getText();
+        String uname = jTextField1.getText();
         String pword = passwordField.getText();
-        if(uname.equals("admin") && pword.equals("admin")){
-            JOptionPane.showMessageDialog(null, "successfully login");   
+        if (uname.equals("admin") && pword.equals("admin"))
+        {
+            JOptionPane.showMessageDialog(null, "successfully login");
             HomeView homepage = new HomeView();
-            homepage.setVisible(true);       
+            homepage.setVisible(true);
             this.setVisible(false);
-        } 
-        else{
-          JOptionPane.showMessageDialog(null, "incorrect details");  
-          jTextField1.setText(" ");
-          passwordField.setText(" ");
+        } else
+        {
+            JOptionPane.showMessageDialog(null, "incorrect details");
+            jTextField1.setText(" ");
+            passwordField.setText(" ");
         }
-    }                                        
+    }
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+    public static void main(String args[])
+    {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+        try
+        {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels())
+            {
+                if ("Nimbus".equals(info.getName()))
+                {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
+        } catch (ClassNotFoundException ex)
+        {
             java.util.logging.Logger.getLogger(LoginView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
+        } catch (InstantiationException ex)
+        {
             java.util.logging.Logger.getLogger(LoginView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
+        } catch (IllegalAccessException ex)
+        {
             java.util.logging.Logger.getLogger(LoginView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (javax.swing.UnsupportedLookAndFeelException ex)
+        {
             java.util.logging.Logger.getLogger(LoginView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
@@ -213,19 +221,20 @@ public class LoginView extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
+            public void run()
+            {
                 new LoginView().setVisible(true);
             }
         });
     }
 
-    private boolean isUserRegistered(String email) 
+    private boolean isUserRegistered(String email)
     {
         User user = dbOperations.getUser(email);
         return (user != null);
     }
 
-    private boolean isPasswordAMatch(String email, String password) 
+    private boolean isPasswordAMatch(String email, String password)
     {
         String userPassword = dbOperations.getUser(email).getPassword();
         boolean isEqual = userPassword.equals(password);

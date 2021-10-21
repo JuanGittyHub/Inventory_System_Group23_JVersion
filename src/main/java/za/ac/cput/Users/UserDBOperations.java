@@ -41,7 +41,7 @@ public class UserDBOperations {
         for(User user : users)
         {
             String dbEmail = user.getEmail();
-            if(email.equalsIgnoreCase(dbEmail));
+            if(email.equalsIgnoreCase(dbEmail))
             {
                 requestedUser = new User(user);
                 break;
