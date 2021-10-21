@@ -45,7 +45,6 @@ public class AddProduct extends javax.swing.JFrame {
         lblBarcode = new javax.swing.JLabel();
         btnSave = new javax.swing.JButton();
         btnClear = new javax.swing.JButton();
-        btnExit = new javax.swing.JButton();
         txtProductName = new javax.swing.JTextField();
         txtPrice = new javax.swing.JTextField();
         txtQuantity = new javax.swing.JTextField();
@@ -57,20 +56,23 @@ public class AddProduct extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
 
-        lblProductName.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        lblProductName.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         lblProductName.setText("Name of Product:");
 
-        lblPrice.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        lblPrice.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         lblPrice.setText("Price of Product:");
 
-        lblQuantity.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        lblQuantity.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         lblQuantity.setText("Amount of Product:");
 
-        lblBarcode.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        lblBarcode.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         lblBarcode.setText("Product ID:");
 
-        btnSave.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        btnSave.setBackground(new java.awt.Color(178, 149, 213));
+        btnSave.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnSave.setForeground(new java.awt.Color(255, 255, 255));
         btnSave.setText("Save");
+        btnSave.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(254, 173, 104), 2, true));
         btnSave.addActionListener(new java.awt.event.ActionListener()
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
@@ -79,8 +81,11 @@ public class AddProduct extends javax.swing.JFrame {
             }
         });
 
-        btnClear.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        btnClear.setBackground(new java.awt.Color(178, 149, 213));
+        btnClear.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnClear.setForeground(new java.awt.Color(255, 255, 255));
         btnClear.setText("Clear");
+        btnClear.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(254, 173, 104), 1, true));
         btnClear.addActionListener(new java.awt.event.ActionListener()
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
@@ -89,39 +94,37 @@ public class AddProduct extends javax.swing.JFrame {
             }
         });
 
-        btnExit.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        btnExit.setText("Exit");
-        btnExit.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                btnExitActionPerformed(evt);
-            }
-        });
-
         txtProductName.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-
-        txtPrice.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-
-        txtQuantity.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-
-        txtBarcode.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-
-        jPanel1.setBackground(new java.awt.Color(255, 153, 51));
-
-        jLabel1.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        jLabel1.setText("ADD PAGE");
-
-        btnHome.setBackground(new java.awt.Color(255, 204, 102));
-        btnHome.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        btnHome.setText("HOME");
-        btnHome.addActionListener(new java.awt.event.ActionListener()
+        txtProductName.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(254, 173, 104), 2, true));
+        txtProductName.addActionListener(new java.awt.event.ActionListener()
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
             {
-                btnHomeActionPerformed(evt);
+                txtProductNameActionPerformed(evt);
             }
         });
+
+        txtPrice.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        txtPrice.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(254, 173, 104), 2, true));
+
+        txtQuantity.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        txtQuantity.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(254, 173, 104), 2, true));
+        txtQuantity.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                txtQuantityActionPerformed(evt);
+            }
+        });
+
+        txtBarcode.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        txtBarcode.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(254, 173, 104), 2, true));
+
+        jPanel1.setBackground(new java.awt.Color(178, 149, 213));
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("ADD PAGE");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -130,78 +133,81 @@ public class AddProduct extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addGap(108, 108, 108)
-                .addComponent(btnHome)
-                .addContainerGap())
+                .addGap(377, 377, 377))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btnHome)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(26, Short.MAX_VALUE)
+                .addGap(22, 22, 22)
                 .addComponent(jLabel1)
-                .addGap(23, 23, 23))
+                .addContainerGap(27, Short.MAX_VALUE))
         );
+
+        btnHome.setBackground(new java.awt.Color(178, 149, 213));
+        btnHome.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnHome.setForeground(new java.awt.Color(255, 255, 255));
+        btnHome.setText("HOME");
+        btnHome.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(254, 173, 104), 1, true));
+        btnHome.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                btnHomeActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtBarcode, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtProductName, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblProductName)
-                    .addComponent(lblPrice)
-                    .addComponent(txtPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblQuantity)
-                    .addComponent(txtQuantity, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblBarcode))
-                .addGap(167, 167, 167))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(115, 115, 115)
-                .addComponent(btnSave)
-                .addGap(52, 52, 52)
-                .addComponent(btnClear)
-                .addGap(49, 49, 49)
-                .addComponent(btnExit)
-                .addContainerGap(110, Short.MAX_VALUE))
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(76, 76, 76)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblProductName)
+                            .addComponent(lblPrice)
+                            .addComponent(lblQuantity)
+                            .addComponent(lblBarcode)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btnSave, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(67, 67, 67)
+                                .addComponent(btnClear, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
+                        .addComponent(btnHome, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtProductName)
+                    .addComponent(txtPrice, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(txtBarcode)
+                    .addComponent(txtQuantity))
+                .addContainerGap(77, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(23, 23, 23)
-                        .addComponent(lblProductName)
-                        .addGap(4, 4, 4)
-                        .addComponent(txtProductName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblPrice)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtPrice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblQuantity)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtQuantity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblBarcode)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtBarcode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(19, 50, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnSave)
-                            .addComponent(btnClear)
-                            .addComponent(btnExit))
-                        .addContainerGap())))
+                .addGap(18, 18, 18)
+                .addComponent(lblProductName)
+                .addGap(4, 4, 4)
+                .addComponent(txtProductName, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lblPrice)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lblQuantity)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(txtQuantity, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lblBarcode)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtBarcode, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(41, 41, 41)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnSave, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnClear, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnHome, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(97, Short.MAX_VALUE))
         );
 
         pack();
@@ -229,11 +235,6 @@ public class AddProduct extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnSaveActionPerformed
 
-    private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
-        // TODO add your handling code here:
-        System.exit(0);
-    }//GEN-LAST:event_btnExitActionPerformed
-
     private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
         // TODO add your handling code here:
         txtProductName.setText("");
@@ -248,6 +249,16 @@ public class AddProduct extends javax.swing.JFrame {
         hp.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnHomeActionPerformed
+
+    private void txtProductNameActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_txtProductNameActionPerformed
+    {//GEN-HEADEREND:event_txtProductNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtProductNameActionPerformed
+
+    private void txtQuantityActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_txtQuantityActionPerformed
+    {//GEN-HEADEREND:event_txtQuantityActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtQuantityActionPerformed
 
     /**
      * @param args the command line arguments
@@ -291,7 +302,6 @@ public class AddProduct extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnClear;
-    private javax.swing.JButton btnExit;
     private javax.swing.JButton btnHome;
     private javax.swing.JButton btnSave;
     private javax.swing.JLabel jLabel1;
