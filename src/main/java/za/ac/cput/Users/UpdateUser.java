@@ -57,8 +57,9 @@ public class UpdateUser extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         userTypeComboBox = new javax.swing.JComboBox<>();
         updateUserDetailsBtn = new javax.swing.JToggleButton();
+        detailEditCancelBtn = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(178, 149, 213));
 
         userIdLabel.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
@@ -95,8 +96,10 @@ public class UpdateUser extends javax.swing.JFrame {
 
         passwordField.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(254, 173, 104), 2, true));
 
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel5.setText("Password");
 
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel6.setText("User Type");
 
         userTypeComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Admin", "Employee" }));
@@ -116,6 +119,20 @@ public class UpdateUser extends javax.swing.JFrame {
             }
         });
 
+        detailEditCancelBtn.setBackground(new java.awt.Color(178, 149, 213));
+        detailEditCancelBtn.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        detailEditCancelBtn.setForeground(new java.awt.Color(255, 255, 255));
+        detailEditCancelBtn.setText("Cancel");
+        detailEditCancelBtn.setActionCommand("Cancel");
+        detailEditCancelBtn.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(254, 173, 104), 1, true));
+        detailEditCancelBtn.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                detailEditCancelBtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -125,7 +142,10 @@ public class UpdateUser extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(userIdLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(userIdLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(detailEditCancelBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(userIDField)
                     .addComponent(firstNameField)
@@ -143,8 +163,10 @@ public class UpdateUser extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(29, 29, 29)
-                .addComponent(userIdLabel)
+                .addContainerGap(40, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(userIdLabel, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(detailEditCancelBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(userIDField, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -171,7 +193,7 @@ public class UpdateUser extends javax.swing.JFrame {
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(passwordField, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
+                .addGap(37, 37, 37)
                 .addComponent(updateUserDetailsBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(29, 29, 29))
         );
@@ -191,6 +213,11 @@ public class UpdateUser extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(null, "Details Successfully Updated");
         this.setVisible(false);
     }//GEN-LAST:event_updateUserDetailsBtnActionPerformed
+
+    private void detailEditCancelBtnActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_detailEditCancelBtnActionPerformed
+    {//GEN-HEADEREND:event_detailEditCancelBtnActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_detailEditCancelBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -275,6 +302,7 @@ public class UpdateUser extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField cellphoneField;
+    private javax.swing.JButton detailEditCancelBtn;
     private javax.swing.JTextField emailField;
     private javax.swing.JTextField firstNameField;
     private javax.swing.JLabel jLabel1;

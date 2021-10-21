@@ -34,6 +34,7 @@ public class FetchUser extends javax.swing.JFrame {
         userIDLabel = new javax.swing.JLabel();
         userIdInputField = new javax.swing.JTextField();
         fetchUserBttn = new javax.swing.JButton();
+        fetchUserCancelBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(178, 149, 181));
@@ -62,6 +63,19 @@ public class FetchUser extends javax.swing.JFrame {
             }
         });
 
+        fetchUserCancelBtn.setBackground(new java.awt.Color(178, 149, 213));
+        fetchUserCancelBtn.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        fetchUserCancelBtn.setForeground(new java.awt.Color(255, 255, 255));
+        fetchUserCancelBtn.setText("Cancel");
+        fetchUserCancelBtn.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(254, 173, 104), 1, true));
+        fetchUserCancelBtn.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                fetchUserCancelBtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -69,7 +83,10 @@ public class FetchUser extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(35, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(userIDLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(userIDLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(fetchUserCancelBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(userIdInputField)
                     .addComponent(fetchUserBttn, javax.swing.GroupLayout.DEFAULT_SIZE, 954, Short.MAX_VALUE))
                 .addGap(35, 35, 35))
@@ -77,9 +94,15 @@ public class FetchUser extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(40, 40, 40)
-                .addComponent(userIDLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addComponent(userIDLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(35, 35, 35))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(fetchUserCancelBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)))
                 .addComponent(userIdInputField, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(fetchUserBttn, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -106,6 +129,12 @@ public class FetchUser extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Invalid User ID");
         }
     }//GEN-LAST:event_fetchUserBttnActionPerformed
+
+    private void fetchUserCancelBtnActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_fetchUserCancelBtnActionPerformed
+    {//GEN-HEADEREND:event_fetchUserCancelBtnActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_fetchUserCancelBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -160,6 +189,7 @@ public class FetchUser extends javax.swing.JFrame {
     private final int MINIMUM_VALID_ID = 100;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton fetchUserBttn;
+    private javax.swing.JButton fetchUserCancelBtn;
     private javax.swing.JLabel userIDLabel;
     private javax.swing.JTextField userIdInputField;
     // End of variables declaration//GEN-END:variables

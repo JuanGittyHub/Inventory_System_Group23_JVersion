@@ -54,9 +54,9 @@ public class AddUser extends javax.swing.JFrame {
         userTypeComboBox = new javax.swing.JComboBox<>();
         jLabel7 = new javax.swing.JLabel();
         passwordInputField = new javax.swing.JTextField();
-        button1 = new java.awt.Button();
+        assUserBackButton = new java.awt.Button();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(178, 149, 213));
 
         jLabel1.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
@@ -141,11 +141,18 @@ public class AddUser extends javax.swing.JFrame {
             }
         });
 
-        button1.setBackground(new java.awt.Color(178, 149, 213));
-        button1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        button1.setForeground(new java.awt.Color(255, 255, 255));
-        button1.setLabel("Back");
-        button1.setName("backBtn"); // NOI18N
+        assUserBackButton.setBackground(new java.awt.Color(178, 149, 213));
+        assUserBackButton.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        assUserBackButton.setForeground(new java.awt.Color(255, 255, 255));
+        assUserBackButton.setLabel("Back");
+        assUserBackButton.setName("backBtn"); // NOI18N
+        assUserBackButton.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                assUserBackButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -175,7 +182,7 @@ public class AddUser extends javax.swing.JFrame {
                                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 685, Short.MAX_VALUE)
-                                .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(assUserBackButton, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(47, 47, 47))))
         );
         layout.setVerticalGroup(
@@ -188,7 +195,7 @@ public class AddUser extends javax.swing.JFrame {
                         .addGap(38, 38, 38))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(assUserBackButton, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -218,7 +225,7 @@ public class AddUser extends javax.swing.JFrame {
                 .addGap(40, 40, 40))
         );
 
-        button1.getAccessibleContext().setAccessibleName("addUsersBackBtn");
+        assUserBackButton.getAccessibleContext().setAccessibleName("addUsersBackBtn");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -256,6 +263,12 @@ public class AddUser extends javax.swing.JFrame {
     {//GEN-HEADEREND:event_passwordInputFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_passwordInputFieldActionPerformed
+
+    private void assUserBackButtonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_assUserBackButtonActionPerformed
+    {//GEN-HEADEREND:event_assUserBackButtonActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_assUserBackButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -379,7 +392,7 @@ public class AddUser extends javax.swing.JFrame {
     private String password = "";
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private java.awt.Button button1;
+    private java.awt.Button assUserBackButton;
     private javax.swing.JTextField cellphoneInputField;
     private javax.swing.JTextField emailInputField;
     private javax.swing.JTextField firstNameInputField;

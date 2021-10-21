@@ -33,8 +33,9 @@ public class RemoveUser extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         removeUserField = new javax.swing.JTextField();
         removeUserBtn = new javax.swing.JToggleButton();
+        removeUserCancelBtn = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(178, 149, 213));
 
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
@@ -66,17 +67,33 @@ public class RemoveUser extends javax.swing.JFrame {
             }
         });
 
+        removeUserCancelBtn.setBackground(new java.awt.Color(178, 149, 213));
+        removeUserCancelBtn.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        removeUserCancelBtn.setForeground(new java.awt.Color(255, 255, 255));
+        removeUserCancelBtn.setText("Cancel");
+        removeUserCancelBtn.setActionCommand("Cancel");
+        removeUserCancelBtn.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(254, 173, 104), 1, true));
+        removeUserCancelBtn.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                removeUserCancelBtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(59, 59, 59)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(removeUserField)
-                    .addComponent(removeUserBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 910, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(removeUserField)
+                        .addComponent(removeUserBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 910, Short.MAX_VALUE))
+                    .addComponent(removeUserCancelBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(55, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -87,10 +104,12 @@ public class RemoveUser extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(removeUserCancelBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(removeUserField, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(49, 49, 49)
                 .addComponent(removeUserBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(263, Short.MAX_VALUE))
+                .addContainerGap(223, Short.MAX_VALUE))
         );
 
         pack();
@@ -113,6 +132,11 @@ public class RemoveUser extends javax.swing.JFrame {
             this.setVisible(false);
         }
     }//GEN-LAST:event_removeUserBtnActionPerformed
+
+    private void removeUserCancelBtnActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_removeUserCancelBtnActionPerformed
+    {//GEN-HEADEREND:event_removeUserCancelBtnActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_removeUserCancelBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -162,6 +186,7 @@ public class RemoveUser extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JToggleButton removeUserBtn;
+    private javax.swing.JButton removeUserCancelBtn;
     private javax.swing.JTextField removeUserField;
     // End of variables declaration//GEN-END:variables
 }
