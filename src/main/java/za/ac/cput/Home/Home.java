@@ -159,8 +159,7 @@ public class Home extends javax.swing.JFrame {
         // TODO add your handling code here:
         RemoveInventory remo = new RemoveInventory();
         remo.setVisible(true);
-        
-        this.setVisible(false);
+        this.dispose();
     }//GEN-LAST:event_removeInventoryActionPerformed
 
     private void systemUsersActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_systemUsersActionPerformed
@@ -176,9 +175,10 @@ public class Home extends javax.swing.JFrame {
         try{
             AddProduct addProductView = new AddProduct();
             addProductView.setVisible(true);
+            this.dispose();
         }catch(Exception exception)
         {
-            
+            System.err.println(exception.getMessage());
         }
     }//GEN-LAST:event_addInventoryActionPerformed
 
