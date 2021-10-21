@@ -17,10 +17,16 @@ public class GUIUtility {
     public static boolean isValidProductPrice(String productPrice)
     {
         boolean isValidProductPrice = false;
+        var dotCount = 0;
         for (var i = 0; i < productPrice.length(); ++i)
         {
             if (!Character.isDigit(productPrice.charAt(i)))
             {
+                if(productPrice.charAt(i) == '.') 
+                {
+                    ++dotCount;
+                    continue;
+                }
                 isValidProductPrice = false;
                 break;
             } else
@@ -28,7 +34,7 @@ public class GUIUtility {
                 isValidProductPrice = true;
             }
         }
-        return isValidProductPrice;
+        return isValidProductPrice && (dotCount == 1 || dotCount == 0);
     }
 
     public static boolean isNameValid(String name)
