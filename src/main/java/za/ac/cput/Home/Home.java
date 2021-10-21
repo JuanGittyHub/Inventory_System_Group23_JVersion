@@ -8,7 +8,7 @@ package za.ac.cput.Home;
 import java.awt.Color;
 import javax.swing.ImageIcon;
 import za.ac.cput.Products.AddProduct;
-import za.ac.cput.Products.removeInventory;
+import za.ac.cput.Products.RemoveInventory;
 import za.ac.cput.Users.Users;
 
 /**
@@ -157,7 +157,7 @@ public class Home extends javax.swing.JFrame {
 
     private void removeInventoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeInventoryActionPerformed
         // TODO add your handling code here:
-        removeInventory remo = new removeInventory();
+        RemoveInventory remo = new RemoveInventory();
         remo.setVisible(true);
         
         this.setVisible(false);

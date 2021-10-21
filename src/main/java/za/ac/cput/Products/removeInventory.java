@@ -18,12 +18,12 @@ import za.ac.cput.Home.Home;
  *
  * @author Lenovo
  */
-public class removeInventory extends javax.swing.JFrame {
+public class RemoveInventory extends javax.swing.JFrame {
 
     /**
      * Creates new form removeInventory
      */
-    public removeInventory()
+    public RemoveInventory()
     {
         initComponents();
 
@@ -73,7 +73,8 @@ public class removeInventory extends javax.swing.JFrame {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+    private void initComponents()
+    {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
@@ -93,8 +94,10 @@ public class removeInventory extends javax.swing.JFrame {
         submitButton.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         submitButton.setForeground(new java.awt.Color(255, 255, 255));
         submitButton.setText("SUBMIT");
-        submitButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        submitButton.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 submitButtonActionPerformed(evt);
             }
         });
@@ -102,8 +105,10 @@ public class removeInventory extends javax.swing.JFrame {
         jButton1.setBackground(new java.awt.Color(255, 255, 255));
         jButton1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jButton1.setText("Back");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        jButton1.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 jButton1ActionPerformed(evt);
             }
         });
@@ -219,24 +224,25 @@ public class removeInventory extends javax.swing.JFrame {
             }
         } catch (ClassNotFoundException ex)
         {
-            java.util.logging.Logger.getLogger(removeInventory.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RemoveInventory.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex)
         {
-            java.util.logging.Logger.getLogger(removeInventory.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RemoveInventory.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex)
         {
-            java.util.logging.Logger.getLogger(removeInventory.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RemoveInventory.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex)
         {
-            java.util.logging.Logger.getLogger(removeInventory.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RemoveInventory.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run()
             {
-                new removeInventory().setVisible(true);
+                new RemoveInventory().setVisible(true);
             }
         });
     }
