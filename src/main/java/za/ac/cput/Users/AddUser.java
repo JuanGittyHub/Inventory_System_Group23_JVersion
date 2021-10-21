@@ -244,6 +244,7 @@ public class AddUser extends javax.swing.JFrame {
     {//GEN-HEADEREND:event_saveNewUserBtnActionPerformed
         // TODO add your handling code here:
         extractValuesFromFormFields();
+        validateDataFromFormField();
         saveNewUser();
         resetFormFields();
         this.setVisible(false);
@@ -383,6 +384,13 @@ public class AddUser extends javax.swing.JFrame {
         this.passwordInputField.setText("");
     }
     
+    private void validateDataFromFormField()
+    {
+        
+    }
+    
+    
+    
     private int id = 0;
     private String firstName = "";
     private String lastName = "";
@@ -408,4 +416,5 @@ public class AddUser extends javax.swing.JFrame {
     private javax.swing.JButton saveNewUserBtn;
     private javax.swing.JComboBox<String> userTypeComboBox;
     // End of variables declaration//GEN-END:variables
+
 }

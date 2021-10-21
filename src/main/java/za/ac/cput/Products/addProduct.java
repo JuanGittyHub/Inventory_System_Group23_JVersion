@@ -260,11 +260,6 @@ public class AddProduct extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtQuantityActionPerformed
 
-    private boolean isValidBarcode(String barcode)
-    {
-        return (barcode.isEmpty()) ? false : barcode.length() == BARCODE_LENGTH;
-    }
-    
     /**
      * @param args the command line arguments
      */
@@ -304,8 +299,6 @@ public class AddProduct extends javax.swing.JFrame {
             }
         });
     }
-    
-    private final int BARCODE_LENGTH = 12;
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnClear;
