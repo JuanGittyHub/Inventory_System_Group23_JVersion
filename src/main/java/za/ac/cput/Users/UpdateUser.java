@@ -59,10 +59,12 @@ public class UpdateUser extends javax.swing.JFrame {
         updateUserDetailsBtn = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(178, 149, 213));
 
         userIdLabel.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         userIdLabel.setText("User Id");
 
+        userIDField.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(254, 173, 104), 2, true));
         userIDField.addActionListener(new java.awt.event.ActionListener()
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
@@ -74,6 +76,14 @@ public class UpdateUser extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         jLabel2.setText("First Name");
 
+        firstNameField.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(254, 173, 104), 2, true));
+
+        lastNameField.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(254, 173, 104), 2, true));
+
+        emailField.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(254, 173, 104), 2, true));
+
+        cellphoneField.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(254, 173, 104), 2, true));
+
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         jLabel1.setText("Last Name");
 
@@ -83,14 +93,21 @@ public class UpdateUser extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         jLabel4.setText("Cellphone");
 
+        passwordField.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(254, 173, 104), 2, true));
+
         jLabel5.setText("Password");
 
         jLabel6.setText("User Type");
 
         userTypeComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Admin", "Employee" }));
         userTypeComboBox.setSelectedIndex(1);
+        userTypeComboBox.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(254, 173, 104), 2, true));
 
+        updateUserDetailsBtn.setBackground(new java.awt.Color(178, 149, 213));
+        updateUserDetailsBtn.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        updateUserDetailsBtn.setForeground(new java.awt.Color(255, 255, 255));
         updateUserDetailsBtn.setText("Update User Details");
+        updateUserDetailsBtn.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(254, 173, 104), 1, true));
         updateUserDetailsBtn.addActionListener(new java.awt.event.ActionListener()
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
