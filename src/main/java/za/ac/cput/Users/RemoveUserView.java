@@ -5,6 +5,7 @@
  */
 package za.ac.cput.Users;
 
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /**
@@ -17,6 +18,9 @@ public class RemoveUserView extends javax.swing.JFrame {
     public RemoveUserView()
     {
         initComponents();
+        ImageIcon icon;
+        icon = new ImageIcon("Logo/logos.jpg");
+        this.setIconImage(icon.getImage());
     }
 
     /**
@@ -26,8 +30,7 @@ public class RemoveUserView extends javax.swing.JFrame {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents()
-    {
+    private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -45,10 +48,8 @@ public class RemoveUserView extends javax.swing.JFrame {
         jLabel2.setText("User ID");
 
         removeUserField.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(254, 173, 104), 2, true));
-        removeUserField.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        removeUserField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 removeUserFieldActionPerformed(evt);
             }
         });
@@ -59,10 +60,8 @@ public class RemoveUserView extends javax.swing.JFrame {
         removeUserBtn.setText("Remove User");
         removeUserBtn.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(254, 173, 104), 1, true));
         removeUserBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        removeUserBtn.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        removeUserBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 removeUserBtnActionPerformed(evt);
             }
         });
@@ -72,10 +71,8 @@ public class RemoveUserView extends javax.swing.JFrame {
         removeUserCancelBtn.setForeground(new java.awt.Color(255, 255, 255));
         removeUserCancelBtn.setText("Cancel");
         removeUserCancelBtn.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(254, 173, 104), 1, true));
-        removeUserCancelBtn.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        removeUserCancelBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 removeUserCancelBtnActionPerformed(evt);
             }
         });
@@ -112,6 +109,7 @@ public class RemoveUserView extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void removeUserFieldActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_removeUserFieldActionPerformed

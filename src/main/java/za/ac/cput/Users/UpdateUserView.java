@@ -6,6 +6,7 @@
 package za.ac.cput.Users;
 
 import java.util.Set;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /**
@@ -23,6 +24,9 @@ public class UpdateUserView extends javax.swing.JFrame {
     public UpdateUserView()
     {
         initComponents();
+        ImageIcon icon;
+        icon = new ImageIcon("Logo/logos.jpg");
+        this.setIconImage(icon.getImage());
     }
     
     public UpdateUserView(int id)
@@ -39,8 +43,7 @@ public class UpdateUserView extends javax.swing.JFrame {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents()
-    {
+    private void initComponents() {
 
         userIdLabel = new javax.swing.JLabel();
         userIDField = new javax.swing.JTextField();
@@ -66,10 +69,8 @@ public class UpdateUserView extends javax.swing.JFrame {
         userIdLabel.setText("User Id");
 
         userIDField.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(254, 173, 104), 2, true));
-        userIDField.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        userIDField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 userIDFieldActionPerformed(evt);
             }
         });
@@ -111,10 +112,8 @@ public class UpdateUserView extends javax.swing.JFrame {
         updateUserDetailsBtn.setForeground(new java.awt.Color(255, 255, 255));
         updateUserDetailsBtn.setText("Update User Details");
         updateUserDetailsBtn.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(254, 173, 104), 1, true));
-        updateUserDetailsBtn.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        updateUserDetailsBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 updateUserDetailsBtnActionPerformed(evt);
             }
         });
@@ -124,10 +123,8 @@ public class UpdateUserView extends javax.swing.JFrame {
         detailEditCancelBtn.setForeground(new java.awt.Color(255, 255, 255));
         detailEditCancelBtn.setText("Cancel");
         detailEditCancelBtn.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(254, 173, 104), 1, true));
-        detailEditCancelBtn.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        detailEditCancelBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 detailEditCancelBtnActionPerformed(evt);
             }
         });
@@ -198,6 +195,7 @@ public class UpdateUserView extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void userIDFieldActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_userIDFieldActionPerformed

@@ -14,6 +14,7 @@ import java.sql.Timestamp;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.Date;
+import javax.swing.ImageIcon;
 import za.ac.cput.DBConnection.DBConnection;
 
 /**
@@ -28,6 +29,9 @@ public class AddUserView extends javax.swing.JFrame {
     public AddUserView()
     {
         initComponents();
+        ImageIcon icon;
+        icon = new ImageIcon("Logo/logos.jpg");
+        this.setIconImage(icon.getImage());
     }
 
     /**
@@ -37,8 +41,7 @@ public class AddUserView extends javax.swing.JFrame {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents()
-    {
+    private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -57,7 +60,7 @@ public class AddUserView extends javax.swing.JFrame {
         assUserBackButton = new java.awt.Button();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setBackground(new java.awt.Color(178, 149, 213));
+        setBackground(new java.awt.Color(212, 209, 206));
 
         jLabel1.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         jLabel1.setText("Add User");
@@ -66,11 +69,8 @@ public class AddUserView extends javax.swing.JFrame {
         jLabel2.setText("Name");
 
         firstNameInputField.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(254, 173, 104), 2, true));
-        firstNameInputField.setMargin(new java.awt.Insets(2, 2, 2, 2));
-        firstNameInputField.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        firstNameInputField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 firstNameInputFieldActionPerformed(evt);
             }
         });
@@ -79,10 +79,8 @@ public class AddUserView extends javax.swing.JFrame {
         jLabel3.setText("Surname");
 
         lastNameInputField.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(254, 173, 104), 2, true));
-        lastNameInputField.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        lastNameInputField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 lastNameInputFieldActionPerformed(evt);
             }
         });
@@ -91,10 +89,8 @@ public class AddUserView extends javax.swing.JFrame {
         jLabel4.setText("Email");
 
         emailInputField.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(254, 173, 104), 2, true));
-        emailInputField.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        emailInputField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 emailInputFieldActionPerformed(evt);
             }
         });
@@ -103,10 +99,8 @@ public class AddUserView extends javax.swing.JFrame {
         jLabel5.setText("Cellphone");
 
         cellphoneInputField.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(254, 173, 104), 2, true));
-        cellphoneInputField.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        cellphoneInputField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cellphoneInputFieldActionPerformed(evt);
             }
         });
@@ -115,10 +109,8 @@ public class AddUserView extends javax.swing.JFrame {
         saveNewUserBtn.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         saveNewUserBtn.setForeground(new java.awt.Color(255, 255, 255));
         saveNewUserBtn.setText("Save");
-        saveNewUserBtn.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        saveNewUserBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 saveNewUserBtnActionPerformed(evt);
             }
         });
@@ -133,10 +125,8 @@ public class AddUserView extends javax.swing.JFrame {
         jLabel7.setText("Password");
 
         passwordInputField.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(254, 173, 104), 2, true));
-        passwordInputField.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        passwordInputField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 passwordInputFieldActionPerformed(evt);
             }
         });
@@ -146,10 +136,8 @@ public class AddUserView extends javax.swing.JFrame {
         assUserBackButton.setForeground(new java.awt.Color(255, 255, 255));
         assUserBackButton.setLabel("Back");
         assUserBackButton.setName("backBtn"); // NOI18N
-        assUserBackButton.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        assUserBackButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 assUserBackButtonActionPerformed(evt);
             }
         });
@@ -228,6 +216,7 @@ public class AddUserView extends javax.swing.JFrame {
         assUserBackButton.getAccessibleContext().setAccessibleName("addUsersBackBtn");
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void lastNameInputFieldActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_lastNameInputFieldActionPerformed

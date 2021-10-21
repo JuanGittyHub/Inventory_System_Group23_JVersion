@@ -5,6 +5,7 @@
  */
 package za.ac.cput.Users;
 
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /**
@@ -19,6 +20,9 @@ public class FetchUserView extends javax.swing.JFrame {
     public FetchUserView()
     {
         initComponents();
+        ImageIcon icon;
+        icon = new ImageIcon("Logo/logos.jpg");
+        this.setIconImage(icon.getImage());
     }
 
     /**
@@ -28,8 +32,7 @@ public class FetchUserView extends javax.swing.JFrame {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents()
-    {
+    private void initComponents() {
 
         userIDLabel = new javax.swing.JLabel();
         userIdInputField = new javax.swing.JTextField();
@@ -43,10 +46,8 @@ public class FetchUserView extends javax.swing.JFrame {
         userIDLabel.setText("User ID");
 
         userIdInputField.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(254, 173, 104), 2, true));
-        userIdInputField.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        userIdInputField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 userIdInputFieldActionPerformed(evt);
             }
         });
@@ -55,10 +56,8 @@ public class FetchUserView extends javax.swing.JFrame {
         fetchUserBttn.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         fetchUserBttn.setForeground(new java.awt.Color(255, 255, 255));
         fetchUserBttn.setText("Fetch User");
-        fetchUserBttn.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        fetchUserBttn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 fetchUserBttnActionPerformed(evt);
             }
         });
@@ -68,10 +67,8 @@ public class FetchUserView extends javax.swing.JFrame {
         fetchUserCancelBtn.setForeground(new java.awt.Color(255, 255, 255));
         fetchUserCancelBtn.setText("Cancel");
         fetchUserCancelBtn.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(254, 173, 104), 1, true));
-        fetchUserCancelBtn.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        fetchUserCancelBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 fetchUserCancelBtnActionPerformed(evt);
             }
         });
@@ -110,6 +107,7 @@ public class FetchUserView extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void userIdInputFieldActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_userIdInputFieldActionPerformed

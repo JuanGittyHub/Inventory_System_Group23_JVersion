@@ -8,6 +8,7 @@ package za.ac.cput.Products;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import za.ac.cput.Home.HomeView;
 import za.ac.cput.dao.ProductDAO;
@@ -29,6 +30,9 @@ public class AddProductView extends javax.swing.JFrame {
      */
     public AddProductView() throws SQLException
     {
+        ImageIcon icon;
+        icon = new ImageIcon("Logo/logos.jpg");
+        this.setIconImage(icon.getImage());
         initComponents();
         hideErrorMessages();
         dao = new ProductDAO();
@@ -41,8 +45,7 @@ public class AddProductView extends javax.swing.JFrame {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents()
-    {
+    private void initComponents() {
 
         lblProductName = new javax.swing.JLabel();
         lblPrice = new javax.swing.JLabel();
@@ -63,7 +66,7 @@ public class AddProductView extends javax.swing.JFrame {
         invalidProductBarcodeErrorLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(212, 209, 206));
 
         lblProductName.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         lblProductName.setText("Name of Product:");
@@ -82,10 +85,8 @@ public class AddProductView extends javax.swing.JFrame {
         btnSave.setForeground(new java.awt.Color(255, 255, 255));
         btnSave.setText("Save");
         btnSave.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(254, 173, 104), 2, true));
-        btnSave.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        btnSave.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSaveActionPerformed(evt);
             }
         });
@@ -95,20 +96,16 @@ public class AddProductView extends javax.swing.JFrame {
         btnClear.setForeground(new java.awt.Color(255, 255, 255));
         btnClear.setText("Clear");
         btnClear.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(254, 173, 104), 1, true));
-        btnClear.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        btnClear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnClearActionPerformed(evt);
             }
         });
 
         txtProductName.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         txtProductName.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(254, 173, 104), 2, true));
-        txtProductName.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        txtProductName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtProductNameActionPerformed(evt);
             }
         });
@@ -118,10 +115,8 @@ public class AddProductView extends javax.swing.JFrame {
 
         txtQuantity.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         txtQuantity.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(254, 173, 104), 2, true));
-        txtQuantity.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        txtQuantity.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtQuantityActionPerformed(evt);
             }
         });
@@ -157,10 +152,8 @@ public class AddProductView extends javax.swing.JFrame {
         btnHome.setForeground(new java.awt.Color(255, 255, 255));
         btnHome.setText("HOME");
         btnHome.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(254, 173, 104), 1, true));
-        btnHome.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        btnHome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnHomeActionPerformed(evt);
             }
         });
@@ -249,6 +242,7 @@ public class AddProductView extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
