@@ -1,6 +1,16 @@
-C:\Users\Lenovo\Downloads\Inventory_System_Group23_JVersion-master (1)\Inventory_System_Group23_JVersion-master\src\main\java\za\ac\cput\Login\loginJFrame.java
-C:\Users\Lenovo\Downloads\Inventory_System_Group23_JVersion-master (1)\Inventory_System_Group23_JVersion-master\src\main\java\za\ac\cput\group23\inventory_system_group23_jversion\App.java
-C:\Users\Lenovo\Downloads\Inventory_System_Group23_JVersion-master (1)\Inventory_System_Group23_JVersion-master\src\main\java\za\ac\cput\Products\Products.java
-C:\Users\Lenovo\Downloads\Inventory_System_Group23_JVersion-master (1)\Inventory_System_Group23_JVersion-master\src\main\java\za\ac\cput\DBConnection\DBConnection.java
-C:\Users\Lenovo\Downloads\Inventory_System_Group23_JVersion-master (1)\Inventory_System_Group23_JVersion-master\src\main\java\za\ac\cput\Home\Home.java
-C:\Users\Lenovo\Downloads\Inventory_System_Group23_JVersion-master (1)\Inventory_System_Group23_JVersion-master\src\main\java\za\ac\cput\Products\removeInventory.java
+C:\Users\Lenovo\Downloads\Inventory_System_Group23_JVersion-master\Inventory_System_Group23_JVersion-master\src\main\java\za\ac\cput\Users\Users.java
+C:\Users\Lenovo\Downloads\Inventory_System_Group23_JVersion-master\Inventory_System_Group23_JVersion-master\src\main\java\za\ac\cput\DBConnection\DBConnection.java
+C:\Users\Lenovo\Downloads\Inventory_System_Group23_JVersion-master\Inventory_System_Group23_JVersion-master\src\main\java\za\ac\cput\Users\UpdateUser.java
+C:\Users\Lenovo\Downloads\Inventory_System_Group23_JVersion-master\Inventory_System_Group23_JVersion-master\src\main\java\za\ac\cput\Users\UserDBOperations.java
+C:\Users\Lenovo\Downloads\Inventory_System_Group23_JVersion-master\Inventory_System_Group23_JVersion-master\src\main\java\za\ac\cput\Login\loginJFrame.java
+C:\Users\Lenovo\Downloads\Inventory_System_Group23_JVersion-master\Inventory_System_Group23_JVersion-master\src\main\java\za\ac\cput\group23\inventory_system_group23_jversion\App.java
+C:\Users\Lenovo\Downloads\Inventory_System_Group23_JVersion-master\Inventory_System_Group23_JVersion-master\src\main\java\za\ac\cput\Home\Home.java
+C:\Users\Lenovo\Downloads\Inventory_System_Group23_JVersion-master\Inventory_System_Group23_JVersion-master\src\main\java\za\ac\cput\dao\ProductDAO.java
+C:\Users\Lenovo\Downloads\Inventory_System_Group23_JVersion-master\Inventory_System_Group23_JVersion-master\src\main\java\za\ac\cput\Products\removeInventory.java
+C:\Users\Lenovo\Downloads\Inventory_System_Group23_JVersion-master\Inventory_System_Group23_JVersion-master\src\main\java\za\ac\cput\Users\User.java
+C:\Users\Lenovo\Downloads\Inventory_System_Group23_JVersion-master\Inventory_System_Group23_JVersion-master\src\main\java\za\ac\cput\Products\ViewProducts.java
+C:\Users\Lenovo\Downloads\Inventory_System_Group23_JVersion-master\Inventory_System_Group23_JVersion-master\src\main\java\za\ac\cput\Users\FetchUser.java
+C:\Users\Lenovo\Downloads\Inventory_System_Group23_JVersion-master\Inventory_System_Group23_JVersion-master\src\main\java\za\ac\cput\Users\AddUser.java
+C:\Users\Lenovo\Downloads\Inventory_System_Group23_JVersion-master\Inventory_System_Group23_JVersion-master\src\main\java\za\ac\cput\Users\RemoveUser.java
+C:\Users\Lenovo\Downloads\Inventory_System_Group23_JVersion-master\Inventory_System_Group23_JVersion-master\src\main\java\za\ac\cput\Products\addProduct.java
+C:\Users\Lenovo\Downloads\Inventory_System_Group23_JVersion-master\Inventory_System_Group23_JVersion-master\src\main\java\za\ac\cput\Products\Products.java

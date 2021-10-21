@@ -9,7 +9,8 @@ import java.awt.Color;
 import javax.swing.ImageIcon;
 import za.ac.cput.Products.AddProduct;
 import za.ac.cput.Products.RemoveInventory;
-import za.ac.cput.Users.Users;
+import za.ac.cput.Users.UsersView;
+import za.ac.cput.Products.ViewProducts;
 
 /**
  *
@@ -62,16 +63,14 @@ public class Home extends javax.swing.JFrame {
 
         ProductDisplay.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         ProductDisplay.setText("Products");
+        ProductDisplay.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ProductDisplayActionPerformed(evt);
+            }
+        });
 
         addInventory.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         addInventory.setText("Add Inventory");
-        addInventory.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                addInventoryActionPerformed(evt);
-            }
-        });
 
         updateInventory.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         updateInventory.setText("Update Inventory");
@@ -165,7 +164,7 @@ public class Home extends javax.swing.JFrame {
     private void systemUsersActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_systemUsersActionPerformed
     {//GEN-HEADEREND:event_systemUsersActionPerformed
         // TODO add your handling code here:
-        Users usersView = new Users();
+        UsersView usersView = new UsersView();
         usersView.setVisible(true);
     }//GEN-LAST:event_systemUsersActionPerformed
 
@@ -182,6 +181,13 @@ public class Home extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_addInventoryActionPerformed
 
+    private void ProductDisplayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProductDisplayActionPerformed
+        // TODO add your handling code here:
+        ViewProducts vp = new ViewProducts();
+        vp.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_ProductDisplayActionPerformed
+    
     /**
      * @param args the command line arguments
      */

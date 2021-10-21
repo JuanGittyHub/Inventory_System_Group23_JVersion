@@ -1,12 +1,10 @@
 
 package za.ac.cput.Login;
 
-import java.awt.Color;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 import za.ac.cput.Home.Home;
-import za.ac.cput.Users.User;
 import za.ac.cput.Users.UserDBOperations;
 
 /**
@@ -245,18 +243,18 @@ public class loginJFrame extends javax.swing.JFrame {
 
     private boolean isUserRegistered(String email) 
     {
-        User user = dbOperation.getUser(email);
+        User user = dbOperations.getUser(email);
         return (user != null);
     }
 
     private boolean isPasswordAMatch(String email, String password) 
     {
-        String userPassword = dbOperation.getUser(email).getPassword();
+        String userPassword = dbOperations.getUser(email).getPassword();
         boolean isEqual = userPassword.equals(password);
         return isEqual;
     }
 
-    private UserDBOperations dbOperation = new UserDBOperations();
+    private UserDBOperations dbOperations = new UserDBOperations();
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
