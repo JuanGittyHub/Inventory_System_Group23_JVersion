@@ -7,6 +7,7 @@ package za.ac.cput.Home;
 
 import java.awt.Color;
 import javax.swing.ImageIcon;
+import za.ac.cput.Products.AddProduct;
 import za.ac.cput.Products.removeInventory;
 import za.ac.cput.Users.Users;
 
@@ -172,7 +173,13 @@ public class Home extends javax.swing.JFrame {
     private void addInventoryActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_addInventoryActionPerformed
     {//GEN-HEADEREND:event_addInventoryActionPerformed
         // TODO add your handling code here:
-        AddProduct 
+        try{
+            AddProduct addProductView = new AddProduct();
+            addProductView.setVisible(true);
+        }catch(Exception exception)
+        {
+            
+        }
     }//GEN-LAST:event_addInventoryActionPerformed
 
     /**
