@@ -50,7 +50,7 @@ public class ProductDAOTest {
     @Test
     public void testSave() throws Exception {
         System.out.println("save");
-        Products product = new Products("Milk", 31.99, 100, 233455677);
+        Products product = new Products("Milk", 31.99, 100, "542135245763");
         Products expResult = product;
         Products result = this.dao.save(product);
         assertEquals(expResult, result);
