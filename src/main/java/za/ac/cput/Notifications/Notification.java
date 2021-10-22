@@ -7,12 +7,13 @@ package za.ac.cput.Notifications;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.Comparator;
 
 /**
  *
  * @author Mbuso Kotob's
  */
-public class Notification {
+public class Notification implements Comparator<Notification> {
 
     String productName;
     int stockLeft;
@@ -66,6 +67,12 @@ public class Notification {
     public String toString()
     {
         return "Notification{" + "productName=" + productName + ", stockLeft=" + stockLeft + ", notificationDateTime=" + notificationDateTime + '}';
+    }
+
+    @Override
+    public int compare(Notification o1, Notification o2)
+    {
+        return o1.getNotificationDateTime().compareTo(o2.getNotificationDateTime());
     }
      
 }

@@ -1,13 +1,17 @@
 package za.ac.cput.Notifications;
 
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Collections;
+import javax.swing.table.DefaultTableModel;
 import za.ac.cput.Home.*;
+import za.ac.cput.dao.ProductDAO;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author Ayanda Khoza
@@ -19,8 +23,10 @@ public class NotificationGui extends javax.swing.JFrame {
     /**
      * Creates new form notificationGui
      */
-    public NotificationGui() {
+    public NotificationGui()
+    {
         initComponents();
+        addDataToTable();
     }
 
     /**
@@ -35,7 +41,7 @@ public class NotificationGui extends javax.swing.JFrame {
 
         jTextField1 = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        notificationsTable = new javax.swing.JTable();
         notificationBackBtn = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
@@ -44,23 +50,17 @@ public class NotificationGui extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(178, 149, 213));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        notificationsTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][]
             {
-                {"Coca-cola", "1", "0"},
-                {"Beef stock", "3", "0"},
-                {"Chicken", "1", "0"},
-                {"Chocolate", "4", "10"},
-                {"Cooking oil", "4", "2"},
-                {"Tinned beef", "4", "3"},
-                {"Tinned fish", "6", "4"}
+
             },
             new String []
             {
                 "Products", "Stock Level", "Date"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(notificationsTable);
 
         notificationBackBtn.setBackground(new java.awt.Color(178, 149, 213));
         notificationBackBtn.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -115,29 +115,60 @@ public class NotificationGui extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_notificationBackBtnActionPerformed
 
+    private void addDataToTable()
+    {
+        ArrayList<Notification> notifications = new ArrayList<Notification>();
+        try
+        {
+            ProductDAO dao = new ProductDAO();
+            notifications = dao.getNotifications();
+            DefaultTableModel model = (DefaultTableModel) notificationsTable.getModel();
+            for (Notification notification : notifications)
+            {
+                model.addRow(new Object[]
+                {
+                    notification.getProductName(),
+                    notification.getStockLeft(),
+                    notification.getNotificationDateTime()
+                });
+            }   
+        } catch (SQLException exception)
+        {
+            System.err.println(exception.getMessage());
+        }
+    }
+
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+    public static void main(String args[])
+    {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+        try
+        {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels())
+            {
+                if ("Nimbus".equals(info.getName()))
+                {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
+        } catch (ClassNotFoundException ex)
+        {
             java.util.logging.Logger.getLogger(NotificationGui.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
+        } catch (InstantiationException ex)
+        {
             java.util.logging.Logger.getLogger(NotificationGui.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
+        } catch (IllegalAccessException ex)
+        {
             java.util.logging.Logger.getLogger(NotificationGui.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (javax.swing.UnsupportedLookAndFeelException ex)
+        {
             java.util.logging.Logger.getLogger(NotificationGui.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
@@ -145,7 +176,8 @@ public class NotificationGui extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
+            public void run()
+            {
                 new NotificationGui().setVisible(true);
             }
         });
@@ -154,8 +186,8 @@ public class NotificationGui extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JButton notificationBackBtn;
+    private javax.swing.JTable notificationsTable;
     // End of variables declaration//GEN-END:variables
 }

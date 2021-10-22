@@ -261,6 +261,9 @@ public class AddProductView extends javax.swing.JFrame {
             String productBarcode = _productBarcode;
             newProduct = new Products(productName, productPrice, productQuantity, productBarcode);
             product = dao.save(newProduct);
+            this.dispose();
+            ProductsView productView = new ProductsView();
+            productView.setVisible(true);
         } catch (Exception ex)
         {
             Logger.getLogger(AddProductView.class.getName()).log(Level.SEVERE, null, ex);

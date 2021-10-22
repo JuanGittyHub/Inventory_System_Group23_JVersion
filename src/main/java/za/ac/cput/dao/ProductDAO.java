@@ -21,6 +21,7 @@ import za.ac.cput.Products.Products;
 public class ProductDAO {
 
     private final Connection con;
+    private final int MINIMUM_QUANTITY = 5;
 
     public ProductDAO() throws SQLException
     {
@@ -40,32 +41,35 @@ public class ProductDAO {
         ps.close();
         return product;
     }
-    
+
     public void saveTransaction(String productBarcode)
     {
         String query = "INSERT INTO TRANSACTIONS (product) VALUES(?)";
-        try{
+        try
+        {
             PreparedStatement preparedStatement = this.con.prepareStatement(query);
             preparedStatement.setString(1, productBarcode);
             preparedStatement.execute();
             reduceQuantity(productBarcode);
+            notificationTrigger();
             preparedStatement.close();
-        }catch (SQLException exception)
+        } catch (SQLException exception)
         {
             System.err.println(exception.getMessage());
         }
     }
-    
+
     private void reduceQuantity(String productBarcode)
     {
         int quantity = 0;
         String queryOne = "SELECT PRODUCTS.QUANTITY FROM PRODUCTS WHERE PRODUCTS.BARCODE = ?";
         String queryTwo = "UPDATE PRODUCTS SET PRODUCTS.QUANTITY = ? WHERE PRODUCTS.BARCODE = ?";
-        try{
+        try
+        {
             PreparedStatement preparedStatement = this.con.prepareStatement(queryOne);
             preparedStatement.setString(1, productBarcode);
             ResultSet results = preparedStatement.executeQuery();
-            while(results.next())
+            while (results.next())
             {
                 quantity = results.getInt("QUANTITY");
             }
@@ -77,13 +81,13 @@ public class ProductDAO {
             preparedStatement.setString(2, productBarcode);
             preparedStatement.executeUpdate();
             preparedStatement.close();
-        }catch (SQLException exception)
+        } catch (SQLException exception)
         {
             System.err.println(exception.getMessage());
         }
     }
 
-    public ArrayList<Notification> getAllProducts()
+    public ArrayList<Notification> getNotifications()
     {
         ArrayList<Notification> notifications = new ArrayList<Notification>();
         /*String query = ""
@@ -91,8 +95,7 @@ public class ProductDAO {
 
         String query = ""
                 + "SELECT PRODUCTS.\"NAME\", PRODUCTS.QUANTITY "
-                + "FROM TRANSACTIONS "
-                + "JOIN PRODUCTS ON TRANSACTIONS.PRODUCT = PRODUCTS.BARCODE;";
+                + "FROM NOTIFICATIONS JOIN PRODUCTS ON NOTIFICATIONS.PRODUCT = PRODUCTS.BARCODE";
         try
         {
             PreparedStatement preparedStatement = this.con.prepareStatement(query);
@@ -110,11 +113,46 @@ public class ProductDAO {
         return notifications;
     }
 
+    private void notificationTrigger()
+    {
+
+        String query = "SELECT * FROM PRODUCTS WHERE PRODUCTS.QUANTITY <= ?";
+        try
+        {
+            PreparedStatement preparedStatement = this.con.prepareStatement(query);
+            preparedStatement.setInt(1, MINIMUM_QUANTITY);
+            ResultSet results = preparedStatement.executeQuery();
+            while (results.next())
+            {
+                String productBarcode = results.getString("barcode");
+                addNotification(productBarcode);
+            }
+        } catch (SQLException exception)
+        {
+            System.err.println(exception.getMessage());
+        }
+    }
+
+    private void addNotification(String productNotification)
+    {
+        String query = "INSERT INTO PROJECT.NOTIFICATIONS (product) VALUES (?)";
+        try
+        {
+            PreparedStatement preparedStatement = this.con.prepareStatement(query);
+            preparedStatement.setString(1, productNotification);
+            preparedStatement.execute();
+            preparedStatement.close();
+        } catch (SQLException exception)
+        {
+            System.err.println(exception.getMessage());
+        }
+    }
+
     private Notification retrieveColumnData(ResultSet resultSet) throws SQLException
     {
         String productName = "";
         int stockLevel = 0;
-        
+
         productName = resultSet.getString("name");
         stockLevel = resultSet.getInt("quantity");
         return new Notification(productName, stockLevel);
@@ -124,5 +162,5 @@ public class ProductDAO {
     {
         this.con.close();
     }
-    
+
 }
