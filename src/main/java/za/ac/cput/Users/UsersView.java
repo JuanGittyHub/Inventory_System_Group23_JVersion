@@ -5,6 +5,7 @@
  */
 package za.ac.cput.Users;
 
+import javax.swing.ImageIcon;
 import javax.swing.UIManager;
 import javax.swing.table.DefaultTableModel;
 
@@ -22,6 +23,9 @@ public class UsersView extends javax.swing.JFrame {
     public UsersView()
     {
         initComponents();
+        ImageIcon icon;
+        icon = new ImageIcon("Logo/logos.jpg");
+        this.setIconImage(icon.getImage());
         addDataToTable();
     }
 

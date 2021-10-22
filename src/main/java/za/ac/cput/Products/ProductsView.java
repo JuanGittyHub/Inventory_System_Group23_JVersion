@@ -95,8 +95,7 @@ model.setColumnIdentifiers(columnNames);
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents()
-    {
+    private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
         headerView = new javax.swing.JPanel();
@@ -105,7 +104,7 @@ model.setColumnIdentifiers(columnNames);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(212, 220, 206));
 
         headerView.setBackground(new java.awt.Color(179, 156, 190));
         headerView.setDoubleBuffered(false);
@@ -134,10 +133,8 @@ model.setColumnIdentifiers(columnNames);
         jButton1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jButton1.setText("Back");
         jButton1.setToolTipText("");
-        jButton1.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
