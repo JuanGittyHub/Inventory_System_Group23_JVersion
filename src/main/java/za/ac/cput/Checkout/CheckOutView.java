@@ -46,6 +46,7 @@ public class CheckOutView extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Checkout");
+        setLocation(new java.awt.Point(50, 50));
 
         productsTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][]
@@ -108,6 +109,7 @@ public class CheckOutView extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void checkoutProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkoutProductActionPerformed
@@ -115,6 +117,9 @@ public class CheckOutView extends javax.swing.JFrame {
         int selectedColumn = this.productsTable.getSelectedColumn();
         String selectedRowProductBarcode = this.productsTable.getModel().getValueAt(selectedRow, selectedColumn).toString();
         System.out.println(selectedRowProductBarcode);
+        CheckoutFormView checkoutFormView = new CheckoutFormView();
+        checkoutFormView.setFormData(selectedRowProductBarcode);
+        checkoutFormView.setVisible(true);
     }//GEN-LAST:event_checkoutProductActionPerformed
 
     /**

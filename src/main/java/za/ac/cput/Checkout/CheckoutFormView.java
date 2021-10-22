@@ -35,6 +35,7 @@ public class CheckoutFormView extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(178, 149, 214));
+        setLocation(new java.awt.Point(50, 50));
 
         checkoutProductBarcodeInputField.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(254, 173, 104), 2, true));
         checkoutProductBarcodeInputField.setEnabled(false);
@@ -72,8 +73,14 @@ public class CheckoutFormView extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    public void setFormData(String barcode)
+    {
+        this.checkoutProductBarcodeInputField.setText(barcode);
+    }
+    
     /**
      * @param args the command line arguments
      */
