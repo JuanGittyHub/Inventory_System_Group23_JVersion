@@ -1,5 +1,6 @@
 package za.ac.cput.Notifications;
 
+import javax.swing.ImageIcon;
 import za.ac.cput.Home.*;
 
 /*
@@ -21,6 +22,9 @@ public class NotificationGui extends javax.swing.JFrame {
      */
     public NotificationGui() {
         initComponents();
+        ImageIcon icon;
+        icon = new ImageIcon("Logo/logos.jpg");
+        this.setIconImage(icon.getImage());
     }
 
     /**

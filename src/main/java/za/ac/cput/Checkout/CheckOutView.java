@@ -5,6 +5,7 @@
  */
 package za.ac.cput.Checkout;
 
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /**
@@ -17,6 +18,9 @@ public class CheckOutView extends javax.swing.JFrame {
      * Creates new form CheckOut
      */
     public CheckOutView() {
+        ImageIcon icon;
+        icon = new ImageIcon("Logo/logos.jpg");
+        this.setIconImage(icon.getImage());
         initComponents();
     }
 

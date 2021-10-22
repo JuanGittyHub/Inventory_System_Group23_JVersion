@@ -5,6 +5,8 @@
  */
 package za.ac.cput.Checkout;
 
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author Mbuso Kotob's
@@ -17,6 +19,9 @@ public class CheckoutFormView extends javax.swing.JFrame {
     public CheckoutFormView()
     {
         initComponents();
+        ImageIcon icon;
+        icon = new ImageIcon("Logo/logos.jpg");
+        this.setIconImage(icon.getImage());
     }
 
     /**
