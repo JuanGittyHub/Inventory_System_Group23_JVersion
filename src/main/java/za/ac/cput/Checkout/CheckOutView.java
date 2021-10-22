@@ -5,7 +5,13 @@
  */
 package za.ac.cput.Checkout;
 
-import javax.swing.JOptionPane;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import javax.swing.table.DefaultTableModel;
+import za.ac.cput.Home.HomeView;
 
 /**
  *
@@ -18,6 +24,7 @@ public class CheckOutView extends javax.swing.JFrame {
      */
     public CheckOutView() {
         initComponents();
+        addTableData();
     }
 
     /**
@@ -41,6 +48,7 @@ public class CheckOutView extends javax.swing.JFrame {
         productsTable = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         checkoutProduct = new javax.swing.JButton();
+        checkoutBackBtn = new javax.swing.JButton();
 
         jMenuItem1.setText("jMenuItem1");
 
@@ -51,13 +59,7 @@ public class CheckOutView extends javax.swing.JFrame {
         productsTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][]
             {
-                {"1020", "Simba Chips", "15.00", "10"},
-                {"1010", "Coca Cola", "23.99", "7"},
-                {"1021", "Cooking Oil", "55.00", "12"},
-                {"1022", "Maize Meal", "45.95", "8"},
-                {"1050", "Sunlight Dishwasher", "18.00", "1"},
-                {"1011", "Beef Stock", "06.00", "5"},
-                {"1024", "Chicken Feets", "25.00", "9"}
+
             },
             new String []
             {
@@ -81,30 +83,51 @@ public class CheckOutView extends javax.swing.JFrame {
             }
         });
 
+        checkoutBackBtn.setBackground(new java.awt.Color(178, 149, 213));
+        checkoutBackBtn.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        checkoutBackBtn.setForeground(new java.awt.Color(255, 255, 255));
+        checkoutBackBtn.setText("Home");
+        checkoutBackBtn.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                checkoutBackBtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(332, 332, 332)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(100, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 573, Short.MAX_VALUE)
-                    .addComponent(checkoutProduct, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(332, 332, 332)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 125, Short.MAX_VALUE)
+                        .addComponent(checkoutBackBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 573, Short.MAX_VALUE)
+                            .addComponent(checkoutProduct, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addGap(100, 100, 100))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(25, 25, 25)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(26, 26, 26))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(checkoutBackBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
-                .addComponent(checkoutProduct, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                .addComponent(checkoutProduct, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(25, 25, 25))
         );
 
@@ -120,8 +143,58 @@ public class CheckOutView extends javax.swing.JFrame {
         CheckoutFormView checkoutFormView = new CheckoutFormView();
         checkoutFormView.setFormData(selectedRowProductBarcode);
         checkoutFormView.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_checkoutProductActionPerformed
 
+    private void checkoutBackBtnActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_checkoutBackBtnActionPerformed
+    {//GEN-HEADEREND:event_checkoutBackBtnActionPerformed
+        this.dispose();
+        HomeView homeView = new HomeView();
+        homeView.setVisible(true);
+    }//GEN-LAST:event_checkoutBackBtnActionPerformed
+
+    private void addTableData()
+    {
+        String pname = " ";
+        String ppricet = " ";
+        String pquant = " ";
+        String pbcode = " ";
+        DefaultTableModel model = (DefaultTableModel) this.productsTable.getModel();;
+        try
+        {
+            String url = "jdbc:derby://localhost:1527/Group23";
+            String user = "project";
+            String password = "admin";
+
+            Connection con = DriverManager.getConnection(url, user, password);
+            String sql = "select name,price,quantity,barcode from products";
+            PreparedStatement ps = con.prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+
+            int i = 0;
+
+            while (rs.next())
+            {
+
+                pname = rs.getString("Name");
+                ppricet = rs.getString("Price");
+                pquant = rs.getString("Quantity");
+                pbcode = rs.getString("Barcode");
+
+                model.addRow(new Object[]
+                {
+                    pbcode, pname, ppricet, pquant
+                });
+                i++;
+
+            }
+
+        } catch (SQLException ab)
+        {
+            ab.getMessage();
+        }
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -159,6 +232,7 @@ public class CheckOutView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton checkoutBackBtn;
     private javax.swing.JButton checkoutProduct;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenuItem jMenuItem1;

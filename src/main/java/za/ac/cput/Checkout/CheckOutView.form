@@ -66,16 +66,21 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="332" max="-2" attributes="0"/>
-              <Component id="jLabel1" min="-2" pref="116" max="-2" attributes="0"/>
-              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-          </Group>
           <Group type="102" alignment="1" attributes="0">
-              <EmptySpace pref="100" max="32767" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="jScrollPane1" pref="573" max="32767" attributes="0"/>
-                  <Component id="checkoutProduct" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="332" max="-2" attributes="0"/>
+                      <Component id="jLabel1" min="-2" pref="116" max="-2" attributes="0"/>
+                      <EmptySpace pref="125" max="32767" attributes="0"/>
+                      <Component id="checkoutBackBtn" min="-2" pref="100" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="jScrollPane1" pref="573" max="32767" attributes="0"/>
+                          <Component id="checkoutProduct" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
               </Group>
               <EmptySpace min="-2" pref="100" max="-2" attributes="0"/>
           </Group>
@@ -84,12 +89,21 @@
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
-              <Component id="jLabel1" min="-2" pref="33" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+                      <Component id="jLabel1" min="-2" pref="33" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="checkoutBackBtn" min="-2" pref="33" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
               <Component id="jScrollPane1" min="-2" pref="141" max="-2" attributes="0"/>
-              <EmptySpace pref="59" max="32767" attributes="0"/>
-              <Component id="checkoutProduct" min="-2" pref="32" max="-2" attributes="0"/>
+              <EmptySpace pref="26" max="32767" attributes="0"/>
+              <Component id="checkoutProduct" min="-2" pref="47" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -106,43 +120,11 @@
         <Component class="javax.swing.JTable" name="productsTable">
           <Properties>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-              <Table columnCount="4" rowCount="7">
-                <Column editable="true" title="BARCODE" type="java.lang.Object">
-                  <Data value="1020"/>
-                  <Data value="1010"/>
-                  <Data value="1021"/>
-                  <Data value="1022"/>
-                  <Data value="1050"/>
-                  <Data value="1011"/>
-                  <Data value="1024"/>
-                </Column>
-                <Column editable="true" title="NAME" type="java.lang.Object">
-                  <Data value="Simba Chips"/>
-                  <Data value="Coca Cola"/>
-                  <Data value="Cooking Oil"/>
-                  <Data value="Maize Meal"/>
-                  <Data value="Sunlight Dishwasher"/>
-                  <Data value="Beef Stock"/>
-                  <Data value="Chicken Feets"/>
-                </Column>
-                <Column editable="true" title="PRICE" type="java.lang.Object">
-                  <Data value="15.00"/>
-                  <Data value="23.99"/>
-                  <Data value="55.00"/>
-                  <Data value="45.95"/>
-                  <Data value="18.00"/>
-                  <Data value="06.00"/>
-                  <Data value="25.00"/>
-                </Column>
-                <Column editable="true" title="QUALITY" type="java.lang.Object">
-                  <Data value="10"/>
-                  <Data value="7"/>
-                  <Data value="12"/>
-                  <Data value="8"/>
-                  <Data value="1"/>
-                  <Data value="5"/>
-                  <Data value="9"/>
-                </Column>
+              <Table columnCount="4" rowCount="0">
+                <Column editable="true" title="BARCODE" type="java.lang.Object"/>
+                <Column editable="true" title="NAME" type="java.lang.Object"/>
+                <Column editable="true" title="PRICE" type="java.lang.Object"/>
+                <Column editable="true" title="QUALITY" type="java.lang.Object"/>
               </Table>
             </Property>
             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
@@ -199,6 +181,23 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="checkoutProductActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="checkoutBackBtn">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="d5" green="95" red="b2" type="rgb"/>
+        </Property>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="1"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Home"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="checkoutBackBtnActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

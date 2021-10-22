@@ -5,6 +5,11 @@
  */
 package za.ac.cput.Checkout;
 
+import java.sql.SQLException;
+import javax.swing.JOptionPane;
+import za.ac.cput.Products.ProductsView;
+import za.ac.cput.dao.ProductDAO;
+
 /**
  *
  * @author Mbuso Kotob's
@@ -47,6 +52,13 @@ public class CheckoutFormView extends javax.swing.JFrame {
         chekcoutFormButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         chekcoutFormButton.setForeground(new java.awt.Color(255, 255, 255));
         chekcoutFormButton.setText("Checkout");
+        chekcoutFormButton.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                chekcoutFormButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -75,6 +87,21 @@ public class CheckoutFormView extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void chekcoutFormButtonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_chekcoutFormButtonActionPerformed
+    {//GEN-HEADEREND:event_chekcoutFormButtonActionPerformed
+        try{
+            ProductDAO dao = new ProductDAO();
+            dao.saveTransaction(this.checkoutProductBarcodeInputField.getText());
+            JOptionPane.showMessageDialog(null, "Success! Checkout Complete.");
+            this.dispose();
+            ProductsView productsView = new ProductsView();
+            productsView.setVisible(true);
+        }catch (SQLException exception)
+        {
+            System.err.println(exception.getMessage());
+        }
+    }//GEN-LAST:event_chekcoutFormButtonActionPerformed
 
     public void setFormData(String barcode)
     {

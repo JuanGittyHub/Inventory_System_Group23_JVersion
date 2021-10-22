@@ -40,6 +40,48 @@ public class ProductDAO {
         ps.close();
         return product;
     }
+    
+    public void saveTransaction(String productBarcode)
+    {
+        String query = "INSERT INTO TRANSACTIONS (product) VALUES(?)";
+        try{
+            PreparedStatement preparedStatement = this.con.prepareStatement(query);
+            preparedStatement.setString(1, productBarcode);
+            preparedStatement.execute();
+            reduceQuantity(productBarcode);
+            preparedStatement.close();
+        }catch (SQLException exception)
+        {
+            System.err.println(exception.getMessage());
+        }
+    }
+    
+    private void reduceQuantity(String productBarcode)
+    {
+        int quantity = 0;
+        String queryOne = "SELECT PRODUCTS.QUANTITY FROM PRODUCTS WHERE PRODUCTS.BARCODE = ?";
+        String queryTwo = "UPDATE PRODUCTS SET PRODUCTS.QUANTITY = ? WHERE PRODUCTS.BARCODE = ?";
+        try{
+            PreparedStatement preparedStatement = this.con.prepareStatement(queryOne);
+            preparedStatement.setString(1, productBarcode);
+            ResultSet results = preparedStatement.executeQuery();
+            while(results.next())
+            {
+                quantity = results.getInt("QUANTITY");
+            }
+            preparedStatement.close();
+            results.close();
+            preparedStatement = this.con.prepareStatement(queryTwo);
+            --quantity;
+            preparedStatement.setInt(1, quantity);
+            preparedStatement.setString(2, productBarcode);
+            preparedStatement.executeUpdate();
+            preparedStatement.close();
+        }catch (SQLException exception)
+        {
+            System.err.println(exception.getMessage());
+        }
+    }
 
     public ArrayList<Notification> getAllProducts()
     {
@@ -59,7 +101,8 @@ public class ProductDAO {
             {
                 notifications.add(retrieveColumnData(resultSet));
             }
-            
+            preparedStatement.close();
+            resultSet.close();
         } catch (SQLException exception)
         {
             System.err.println(exception.getMessage());
