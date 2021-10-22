@@ -21,71 +21,73 @@ import za.ac.cput.Home.HomeView;
  * @author Lenovo
  */
 public class ProductsView extends javax.swing.JFrame {
- 
+
     /**
      * Creates new form ViewProducts
      */
-    public ProductsView() {
-         ImageIcon icon;
-         icon = new ImageIcon("Logo/logos.jpg");
-         this.setIconImage(icon.getImage());
-         
-         JTable j = new JTable();
+    public ProductsView()
+    {
+        ImageIcon icon;
+        icon = new ImageIcon("Logo/logos.jpg");
+        this.setIconImage(icon.getImage());
+
+        JTable j = new JTable();
         JTable m = new JTable();
         initComponents();
-        String[] columnNames = {"Name", "Price", "Quantity", "Barcode"};
- 
-             DefaultTableModel model = new DefaultTableModel();
-model.setColumnIdentifiers(columnNames);
+        String[] columnNames =
+        {
+            "Name", "Price", "Quantity", "Barcode"
+        };
+
+        DefaultTableModel model = new DefaultTableModel();
+        model.setColumnIdentifiers(columnNames);
 //j.setBackground(customColor7);
 //j.setGridColor(customColor5);
 
+        j.setModel(model);
+        JScrollPane sp = new JScrollPane(j);
+        sp.setBounds(100, 130, 500, 150);
 
-          j.setModel(model);
-           JScrollPane sp = new JScrollPane(j);
-           sp.setBounds(100, 130, 500, 150);
-          
-          
-         jPanel1.add(sp);
-       String pname = " ";
-       String ppricet = " ";
-      String pquant = " ";
-    String pbcode = " ";
-        
-        try{
-           String url = "jdbc:derby://localhost:1527/Group23";
-        String user = "project";
-        String password = "admin";
-        
-       Connection con = DriverManager.getConnection(url, user, password);
-        String sql = "select name,price,quantity,barcode from products";
-        PreparedStatement ps = con.prepareStatement(sql);
-        ResultSet rs = ps.executeQuery();
-       
-    int i=0;
-        
-        while(rs.next()){
-           
-         pname = rs.getString("Name");
-         ppricet = rs.getString("Price");
-         pquant = rs.getString("Quantity");
-           pbcode = rs.getString("Barcode");
-           
-            model.addRow(new Object[]{pname,ppricet,pquant,pbcode});
-           i++;
+        jPanel1.add(sp);
+        String pname = " ";
+        String ppricet = " ";
+        String pquant = " ";
+        String pbcode = " ";
 
-        
+        try
+        {
+            String url = "jdbc:derby://localhost:1527/Group23";
+            String user = "project";
+            String password = "admin";
+
+            Connection con = DriverManager.getConnection(url, user, password);
+            String sql = "select name,price,quantity,barcode from products";
+            PreparedStatement ps = con.prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+
+            int i = 0;
+
+            while (rs.next())
+            {
+
+                pname = rs.getString("Name");
+                ppricet = rs.getString("Price");
+                pquant = rs.getString("Quantity");
+                pbcode = rs.getString("Barcode");
+
+                model.addRow(new Object[]
+                {
+                    pname, ppricet, pquant, pbcode
+                });
+                i++;
+
+            }
+
+        } catch (SQLException ab)
+        {
+            ab.getMessage();
         }
-        
-       }
-      
-    
-     catch(SQLException ab){
-           ab.getMessage();
-       }
-         
-        
-        
+
     }
 
     /**
@@ -188,26 +190,34 @@ model.setColumnIdentifiers(columnNames);
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+    public static void main(String args[])
+    {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+        try
+        {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels())
+            {
+                if ("Nimbus".equals(info.getName()))
+                {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
+        } catch (ClassNotFoundException ex)
+        {
             java.util.logging.Logger.getLogger(ProductsView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
+        } catch (InstantiationException ex)
+        {
             java.util.logging.Logger.getLogger(ProductsView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
+        } catch (IllegalAccessException ex)
+        {
             java.util.logging.Logger.getLogger(ProductsView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (javax.swing.UnsupportedLookAndFeelException ex)
+        {
             java.util.logging.Logger.getLogger(ProductsView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
@@ -215,7 +225,8 @@ model.setColumnIdentifiers(columnNames);
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
+            public void run()
+            {
                 new ProductsView().setVisible(true);
             }
         });
