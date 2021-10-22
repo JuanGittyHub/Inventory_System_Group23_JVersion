@@ -5,7 +5,6 @@
  */
 package za.ac.cput.Users;
 
-import java.util.Set;
 import javax.swing.JOptionPane;
 
 /**
@@ -210,7 +209,9 @@ public class UpdateUserView extends javax.swing.JFrame {
         extractValuesFromFormFields();
         this.dbOperation.updateUser(new User(this.id, this.firstName, this.lastName, this.email, this.cellphone, this.userType, this.password));
         JOptionPane.showMessageDialog(null, "Details Successfully Updated");
-        this.setVisible(false);
+        this.dispose();
+        UsersView userView = new UsersView();
+        userView.setVisible(true);
     }//GEN-LAST:event_updateUserDetailsBtnActionPerformed
 
     private void detailEditCancelBtnActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_detailEditCancelBtnActionPerformed

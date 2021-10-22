@@ -6,6 +6,7 @@
 package za.ac.cput.Users;
 
 import javax.swing.JOptionPane;
+import za.ac.cput.group23.inventory_system_group23_jversion.GUIUtility;
 
 /**
  *
@@ -17,6 +18,7 @@ public class RemoveUserView extends javax.swing.JFrame {
     public RemoveUserView()
     {
         initComponents();
+        hideErrorMessages();
     }
 
     /**
@@ -34,6 +36,7 @@ public class RemoveUserView extends javax.swing.JFrame {
         removeUserField = new javax.swing.JTextField();
         removeUserBtn = new javax.swing.JToggleButton();
         removeUserCancelBtn = new javax.swing.JButton();
+        invalidUserIDErrorLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(178, 149, 213));
@@ -80,6 +83,10 @@ public class RemoveUserView extends javax.swing.JFrame {
             }
         });
 
+        invalidUserIDErrorLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        invalidUserIDErrorLabel.setForeground(new java.awt.Color(255, 0, 0));
+        invalidUserIDErrorLabel.setText("Invalid User ID");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -87,28 +94,33 @@ public class RemoveUserView extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(59, 59, 59)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(removeUserCancelBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(invalidUserIDErrorLabel))
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(removeUserField)
-                        .addComponent(removeUserBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 910, Short.MAX_VALUE))
-                    .addComponent(removeUserCancelBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(removeUserBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 910, Short.MAX_VALUE)))
                 .addContainerGap(55, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(41, 41, 41)
+                .addGap(40, 40, 40)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(40, 40, 40)
                 .addComponent(removeUserCancelBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(45, 45, 45)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(invalidUserIDErrorLabel)
+                    .addComponent(jLabel2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(removeUserField, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(49, 49, 49)
+                .addGap(45, 45, 45)
                 .addComponent(removeUserBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(223, Short.MAX_VALUE))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
 
         pack();
@@ -121,14 +133,24 @@ public class RemoveUserView extends javax.swing.JFrame {
 
     private void removeUserBtnActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_removeUserBtnActionPerformed
     {//GEN-HEADEREND:event_removeUserBtnActionPerformed
-        int status = dbOperation.removeUser(Integer.parseInt(removeUserField.getText()));
-        if(status == 1)
+        
+        if(GUIUtility.isValidUserID(removeUserField.getText()))
         {
-            JOptionPane.showMessageDialog(null, "User Successfully Removed.");
-            this.setVisible(false);
+            int status = dbOperation.removeUser(Integer.parseInt(removeUserField.getText()));
+            if(status == 1)
+            {
+                JOptionPane.showMessageDialog(null, "User Successfully Removed.");
+                this.dispose();
+                UsersView userView = new UsersView();
+                userView.setVisible(true);
+            }else{
+                JOptionPane.showMessageDialog(null, "There was an error removing the user.");
+                this.dispose();
+                UsersView userView = new UsersView();
+                userView.setVisible(true);
+            }  
         }else{
-            JOptionPane.showMessageDialog(null, "There was an error removing the user.");
-            this.setVisible(false);
+            this.invalidUserIDErrorLabel.setVisible(true);
         }
     }//GEN-LAST:event_removeUserBtnActionPerformed
 
@@ -181,8 +203,14 @@ public class RemoveUserView extends javax.swing.JFrame {
             }
         });
     }
+    
+    private void hideErrorMessages()
+    {
+        this.invalidUserIDErrorLabel.setVisible(false);
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel invalidUserIDErrorLabel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JToggleButton removeUserBtn;

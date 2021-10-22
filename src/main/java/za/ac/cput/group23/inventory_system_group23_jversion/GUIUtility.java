@@ -91,6 +91,7 @@ public class GUIUtility {
     public static boolean isValidUserID(String ID)
     {
         int errorCount = 0;
+        if (ID.isBlank()) return false;
         for (int i = 0; i < ID.length(); ++i)
         {
             if (!Character.isDigit(ID.charAt(i)))

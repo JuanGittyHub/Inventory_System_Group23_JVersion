@@ -14,6 +14,7 @@ import java.sql.Timestamp;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.Date;
+import javax.swing.JOptionPane;
 import za.ac.cput.DBConnection.DBConnection;
 import za.ac.cput.group23.inventory_system_group23_jversion.GUIUtility;
 
@@ -280,10 +281,17 @@ public class AddUserView extends javax.swing.JFrame {
             validateDataFromFormFields();
             saveNewUser();
             resetFormFields();
-            this.setVisible(false);
+            JOptionPane.showMessageDialog(null, "User Successfully Added.");
+            this.dispose();
+            UsersView userView = new UsersView();
+            userView.setVisible(true);
         }catch(Exception exception)
         {
             System.err.println(exception.getMessage());
+            JOptionPane.showMessageDialog(null, "An Error Occured.");
+            this.dispose();
+            UsersView userView = new UsersView();
+            userView.setVisible(true);
         }
         
     }//GEN-LAST:event_saveNewUserBtnActionPerformed
