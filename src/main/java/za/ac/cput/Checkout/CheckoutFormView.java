@@ -9,6 +9,7 @@ import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import za.ac.cput.Products.ProductsView;
 import za.ac.cput.dao.ProductDAO;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -22,6 +23,9 @@ public class CheckoutFormView extends javax.swing.JFrame {
     public CheckoutFormView()
     {
         initComponents();
+        ImageIcon icon;
+        icon = new ImageIcon("Logo/logos.jpg");
+        this.setIconImage(icon.getImage());
     }
 
     /**

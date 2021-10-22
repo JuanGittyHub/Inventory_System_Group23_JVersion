@@ -4,6 +4,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collections;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.ImageIcon;
 import za.ac.cput.Home.*;
 import za.ac.cput.dao.ProductDAO;
 
@@ -27,6 +28,9 @@ public class NotificationGui extends javax.swing.JFrame {
     {
         initComponents();
         addDataToTable();
+        ImageIcon icon;
+        icon = new ImageIcon("Logo/logos.jpg");
+        this.setIconImage(icon.getImage());
     }
 
     /**
