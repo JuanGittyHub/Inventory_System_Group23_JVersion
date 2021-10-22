@@ -44,7 +44,7 @@ public class LoginView extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
-        jPasswordField2 = new javax.swing.JPasswordField();
+        passwordField = new javax.swing.JPasswordField();
 
         jPasswordField1.setText("jPasswordField1");
 
@@ -95,7 +95,7 @@ public class LoginView extends javax.swing.JFrame {
                         .addGap(97, 97, 97)
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 169, Short.MAX_VALUE)
-                            .addComponent(jPasswordField2)))
+                            .addComponent(passwordField)))
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addGap(207, 207, 207)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -111,7 +111,7 @@ public class LoginView extends javax.swing.JFrame {
                 .addGap(64, 64, 64)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE)
-                    .addComponent(jPasswordField2))
+                    .addComponent(passwordField))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(40, 40, 40))
@@ -159,23 +159,7 @@ public class LoginView extends javax.swing.JFrame {
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt)
     {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
 //GEN-LAST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-        String uname = jTextField1.getText();
-        String pword = passwordField.getText();
-        if (uname.equals("admin") && pword.equals("admin"))
-        {
-            JOptionPane.showMessageDialog(null, "successfully login");
-            HomeView homepage = new HomeView();
-            homepage.setVisible(true);
-            this.setVisible(false);
-        } else
-        {
-            JOptionPane.showMessageDialog(null, "incorrect details");
-            jTextField1.setText(" ");
-            passwordField.setText(" ");
-        }
     }
 
     /**
@@ -244,7 +228,7 @@ public class LoginView extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JPasswordField jPasswordField2;
+    private javax.swing.JPasswordField passwordField;
     private javax.swing.JSlider jSlider1;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
